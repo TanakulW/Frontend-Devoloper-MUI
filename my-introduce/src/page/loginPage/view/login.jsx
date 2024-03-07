@@ -12,15 +12,15 @@ import {
 import Pizza from "../../../assets/image/pizza.png";
 import PizzaBg from "../../../assets/image/pizza-background.jpg";
 
-const login = () => {
+const Login = () => {
   const [password, setPassword] = useState("");
 
-//   const handleChangePassword = (event) => {
-//     const value = event.target.value;
-//     if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
-//       setPassword(value);
-//     }
-//   };
+  //   const handleChangePassword = (event) => {
+  //     const value = event.target.value;
+  //     if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+  //       setPassword(value);
+  //     }
+  //   };
 
   return (
     <Box
@@ -120,4 +120,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
