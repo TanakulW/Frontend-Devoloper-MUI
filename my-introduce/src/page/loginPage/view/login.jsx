@@ -8,6 +8,7 @@ import {
   Stack,
   TextField,
   Typography,
+  styled,
 } from "@mui/material";
 import MilkTea from "../../../assets/image/milk-tea.png";
 import PizzaBg from "../../../assets/image/pizza-background.jpg";
@@ -23,12 +24,11 @@ const Login = () => {
   };
 
   return (
-    <Box
+    <StyledBox
       sx={{
         backgroundImage: `url(${PizzaBg})`,
         backgroundSize: "cover",
-        width: "100vw",
-        height: "100vh",
+       
       }}
     >
       <Stack>
@@ -130,8 +130,36 @@ const Login = () => {
           </Grid>
         </Container>
       </Stack>
-    </Box>
+    </StyledBox>
   );
 };
 
 export default Login;
+
+
+const StyledBox = styled("div")(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    width: "100vw",
+    height: "100vh",
+  },
+  // [theme.breakpoints.up("md")]: {
+  //   width: "100%",
+  //   height: "100%",
+  //   background: "#F8F8F8",
+  //   borderRadius: 10,
+  //   minHeight: "80vh",
+  // },
+  [theme.breakpoints.up("lg")]: {
+    width: "100vw",
+    height: "100vh",
+    // width: "95%",
+    // height: "auto",
+    // margin: "auto",
+    // marginTop: 20,
+    // background: "#F8F8F8",
+    // border: "1px solid #f7faf8",
+    // borderRadius: 10,
+    // boxShadow:
+    //   "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+  },
+}));
