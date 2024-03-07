@@ -9,18 +9,18 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import Pizza from "../../../assets/image/pizza.png";
+import MilkTea from "../../../assets/image/milk-tea.png";
 import PizzaBg from "../../../assets/image/pizza-background.jpg";
 
 const Login = () => {
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
 
-  //   const handleChangePassword = (event) => {
-  //     const value = event.target.value;
-  //     if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
-  //       setPassword(value);
-  //     }
-  //   };
+  const hasSpecialCharacters = (event) => {
+    const value = event.target.value;
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+      setUsername(value);
+    }
+  };
 
   return (
     <Box
@@ -45,7 +45,7 @@ const Login = () => {
           <Grid container>
             <CardMedia
               component="img"
-              image={Pizza}
+              image={MilkTea}
               sx={{
                 display: "flex",
                 justifyContent: "center",
@@ -70,11 +70,27 @@ const Login = () => {
             <Grid
               item
               lg={12}
+              sx={{ p: 1 }}
               display="flex"
               justifyContent="center"
-              sx={{ p: 1 }}
             >
-              <TextField id="username" label="Username" variant="standard" />
+              <Box>
+                <TextField
+                  id="username"
+                  label="Username"
+                  variant="standard"
+                  value={username}
+                  onChange={hasSpecialCharacters}
+                />
+                <Typography
+                  display="flex"
+                  justifyContent="left"
+                  sx={{ fontSize: 10 }}
+                  color={"#D98A54"}
+                >
+                  ห้ามใช้อักขระพิเศษ
+                </Typography>
+              </Box>
             </Grid>
 
             <Grid
@@ -89,8 +105,6 @@ const Login = () => {
                 label="Password"
                 type="password"
                 variant="standard"
-                // value={password}
-                // onChange={handleChangePassword}
               />
             </Grid>
 
