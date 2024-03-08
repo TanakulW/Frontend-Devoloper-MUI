@@ -16,6 +16,7 @@ import PizzaBg from "../../../assets/image/pizza-background.jpg";
 
 const Login = () => {
   const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const hasSpecialCharacters = (event) => {
     const value = event.target.value;
@@ -23,6 +24,10 @@ const Login = () => {
       setUsername(value);
     }
   };
+  const handlePassword =(event)=>{
+    const value = event.target.value;
+    setPassword(value)
+  }
 
   return (
     <StyledBox
@@ -75,14 +80,15 @@ const Login = () => {
                   value={username}
                   onChange={hasSpecialCharacters}
                 />
-                <Typography
+                {/* <Typography
                   display="flex"
                   justifyContent="left"
                   sx={{ fontSize: 10 }}
                   color={"#D98A54"}
+                  
                 >
-                  ห้ามใช้อักขระพิเศษ
-                </Typography>
+                  ห้ามใช้อักขระพิเศษ !@#$%^&*(),.?":{}|<></>
+                </Typography> */}
               </Box>
             </Grid>
 
@@ -101,6 +107,8 @@ const Login = () => {
                 label="Password"
                 type="password"
                 variant="standard"
+                value={password}
+                onChange={handlePassword}
               />
             </Grid>
 
@@ -121,6 +129,7 @@ const Login = () => {
                     backgroundColor: "#FCD258",
                     borderColor: "#FCD258",
                   },
+                  boxShadow: "2px 2px 0px 0px #4A1C04",
                   color: "#D98A54",
                   width: "60%",
                   mt: { xs: "5%", sm: "5%", md: "0%", lg: "10%" },
