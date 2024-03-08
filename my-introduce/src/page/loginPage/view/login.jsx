@@ -11,7 +11,7 @@ import {
   styled,
 } from "@mui/material";
 import MilkTea from "../../../assets/image/milk-tea.png";
-import Pizza from "../../../assets/image/pizza.png"
+import Pizza from "../../../assets/image/pizza.png";
 import PizzaBg from "../../../assets/image/pizza-background.jpg";
 
 const Login = () => {
@@ -28,21 +28,10 @@ const Login = () => {
     <StyledBox
       sx={{
         backgroundImage: `url(${PizzaBg})`,
-        backgroundSize: "cover",
-       
       }}
     >
       <Stack>
-        <Container
-          sx={{
-            backgroundColor: "#FEFDDE",
-            borderRadius: "20px",
-            width: "20%",
-            height: "450px",
-            mt: "12%",
-            boxShadow: "0px 0px 10px 0px #4A1C04",
-          }}
-        >
+        <StyledContainer sx={{ m: "auto" }}>
           <Grid container>
             <CardMedia
               component="img"
@@ -53,11 +42,11 @@ const Login = () => {
                 alignItems: "center",
                 m: "auto",
                 p: 1,
-                width: "40%",
+                width: { xs: "50%", sm: "40%", md: "25%", lg: "43%" },
               }}
             />
 
-            <Grid item sm={12} md={12} xs={12} lg={12}>
+            <Grid item xs={12} sm={12} md={12} lg={12}>
               <Typography
                 display="flex"
                 justifyContent="center"
@@ -70,8 +59,11 @@ const Login = () => {
 
             <Grid
               item
+              xs={12}
+              sm={12}
+              md={6}
               lg={12}
-              sx={{ p: 1 }}
+              sx={{ p: 2 }}
               display="flex"
               justifyContent="center"
             >
@@ -96,6 +88,9 @@ const Login = () => {
 
             <Grid
               item
+              xs={12}
+              sm={12}
+              md={6}
               lg={12}
               display="flex"
               justifyContent="center"
@@ -109,7 +104,15 @@ const Login = () => {
               />
             </Grid>
 
-            <Grid item lg={12} display="flex" justifyContent="center">
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={12}
+              lg={12}
+              display="flex"
+              justifyContent="center"
+            >
               <Button
                 sx={{
                   borderRadius: "20px",
@@ -120,7 +123,7 @@ const Login = () => {
                   },
                   color: "#D98A54",
                   width: "60%",
-                  mt: "10%",
+                  mt: { xs: "5%", sm: "5%", md: "0%", lg: "10%" },
                   fontWeight: "bold",
                   fontSize: 20,
                 }}
@@ -129,7 +132,7 @@ const Login = () => {
               </Button>
             </Grid>
           </Grid>
-        </Container>
+        </StyledContainer>
       </Stack>
     </StyledBox>
   );
@@ -137,30 +140,68 @@ const Login = () => {
 
 export default Login;
 
-
 const StyledBox = styled("div")(({ theme }) => ({
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.up("xs")]: {
     width: "100vw",
     height: "100vh",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
   },
-  // [theme.breakpoints.up("md")]: {
-  //   width: "100%",
-  //   height: "100%",
-  //   background: "#F8F8F8",
-  //   borderRadius: 10,
-  //   minHeight: "80vh",
-  // },
+  [theme.breakpoints.up("sm")]: {
+    width: "100vw",
+    height: "100vh",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  },
+  [theme.breakpoints.up("md")]: {
+    width: "100vw",
+    height: "100vh",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  },
   [theme.breakpoints.up("lg")]: {
     width: "100vw",
     height: "100vh",
-    // width: "95%",
-    // height: "auto",
-    // margin: "auto",
-    // marginTop: 20,
-    // background: "#F8F8F8",
-    // border: "1px solid #f7faf8",
-    // borderRadius: 10,
-    // boxShadow:
-    //   "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  },
+}));
+
+const StyledContainer = styled("div")(({ theme }) => ({
+  [theme.breakpoints.up("xs")]: {
+    backgroundColor: "#FEFDDE",
+    marginTop: "20%",
+    borderRadius: "20px",
+    width: "50%",
+    height: "450px",
+    boxShadow: "0px 0px 10px 0px #4A1C04",
+  },
+  [theme.breakpoints.up("sm")]: {
+    backgroundColor: "#FEFDDE",
+    marginTop: "10%",
+    borderRadius: "20px",
+    width: "40%",
+    height: "450px",
+    boxShadow: "0px 0px 10px 0px #4A1C04",
+  },
+  [theme.breakpoints.up("md")]: {
+    backgroundColor: "#FEFDDE",
+    borderRadius: "20px",
+    marginTop: "15%",
+    width: "50%",
+    height: "350px",
+    boxShadow: "0px 0px 10px 0px #4A1C04",
+  },
+  [theme.breakpoints.up("lg")]: {
+    backgroundColor: "#FEFDDE",
+    marginTop: "5%",
+    borderRadius: "20px",
+    width: "15%",
+    height: "470px",
+    boxShadow: "0px 0px 10px 0px #4A1C04",
   },
 }));
