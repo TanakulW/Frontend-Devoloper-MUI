@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import {
   Box,
   Button,
-  CardMedia,
-  Container,
+  Drawer,
   IconButton,
   InputBase,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
   Stack,
   Toolbar,
   Typography,
@@ -19,9 +23,49 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import QrCode2OutlinedIcon from "@mui/icons-material/QrCode2Outlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
+import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
+import HistoryOutlinedIcon from "@mui/icons-material/HistoryOutlined";
+import LocalOfferOutlinedIcon from "@mui/icons-material/LocalOfferOutlined";
+import LocalAtmOutlinedIcon from "@mui/icons-material/LocalAtmOutlined";
+import SettingsApplicationsOutlinedIcon from "@mui/icons-material/SettingsApplicationsOutlined";
 import PizzaMenu from "../../../assets/image/pizza-full.png";
 
-const home = () => {
+const Home = () => {
+  const [openTab, setOpenTab] = useState(false);
+
+  const toggleDrawer = (newOpen) => () => {
+    setOpenTab(newOpen);
+  };
+
+  const DrawerList = (
+    <Box
+      sx={{ width: 250 }}
+      role="presentation"
+      onClose={() => setOpenTab(false)}
+    >
+      <List>
+        {[
+          { text: "Home", icon: <HomeOutlinedIcon /> },
+          { text: "Order", icon: <AddShoppingCartOutlinedIcon /> },
+          { text: "Menu", icon: <LocalOfferOutlinedIcon /> },
+          { text: "Wallet", icon: <AccountBalanceWalletOutlinedIcon /> },
+          { text: "History", icon: <HistoryOutlinedIcon /> },
+          { text: "Promos", icon: <LocalAtmOutlinedIcon /> },
+          { text: "Bills", icon: <LocalOfferOutlinedIcon /> },
+          { text: "Setting", icon: <SettingsApplicationsOutlinedIcon /> },
+        ].map((item, index) => (
+          <ListItem key={item.text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText primary={item.text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -32,8 +76,12 @@ const home = () => {
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
+            onClick={toggleDrawer(true)}
           >
             <MenuIcon />
+            <Drawer open={openTab} onClose={() => setOpenTab(false)}>
+              {DrawerList}
+            </Drawer>
           </IconButton>
           <Typography
             color={"#FCD258"}
@@ -102,14 +150,7 @@ const home = () => {
             </Button>
           </Stack>
 
-          <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            color="inherit"
-            sx={{ml:2}}
-          >
+          <IconButton color="inherit" sx={{ ml: 2 }}>
             <AccountCircle />
           </IconButton>
         </Toolbar>
@@ -118,7 +159,7 @@ const home = () => {
   );
 };
 
-export default home;
+export default Home;
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
