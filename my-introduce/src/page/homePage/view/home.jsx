@@ -66,6 +66,7 @@ const Home = () => {
       </List>
     </Box>
   );
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -79,10 +80,11 @@ const Home = () => {
             onClick={toggleDrawer(true)}
           >
             <MenuIcon />
-            <Drawer open={openTab} onClose={() => setOpenTab(false)}>
-              {DrawerList}
-            </Drawer>
           </IconButton>
+          <Drawer open={openTab} onClose={() => setOpenTab(false)}>
+            {DrawerList}
+          </Drawer>
+
           <Typography
             color={"#FCD258"}
             sx={{ fontSize: 24, fontWeight: "bold" }}
