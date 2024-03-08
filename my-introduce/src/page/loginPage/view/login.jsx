@@ -11,6 +11,7 @@ import {
   styled,
 } from "@mui/material";
 import MilkTea from "../../../assets/image/milk-tea.png";
+import Pizza from "../../../assets/image/pizza.png"
 import PizzaBg from "../../../assets/image/pizza-background.jpg";
 
 const Login = () => {
@@ -45,7 +46,7 @@ const Login = () => {
           <Grid container>
             <CardMedia
               component="img"
-              image={MilkTea}
+              image={Pizza}
               sx={{
                 display: "flex",
                 justifyContent: "center",
