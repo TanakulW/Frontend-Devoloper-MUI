@@ -10,11 +10,15 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-import MilkTea from "../../../assets/image/milk-tea.png";
+import { useNavigate } from "react-router-dom/dist";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import Pizza from "../../../assets/image/pizza.png";
 import PizzaBg from "../../../assets/image/pizza-background.jpg";
+import User from "../../../assets/image/user.png";
+import Lock from "../../../assets/image/lock.png";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -24,10 +28,19 @@ const Login = () => {
       setUsername(value);
     }
   };
-  const handlePassword =(event)=>{
+  const handlePassword = (event) => {
     const value = event.target.value;
-    setPassword(value)
-  }
+    setPassword(value);
+  };
+
+  const handleLogin = () => {
+    const sendData = {
+      username: username.toLocaleString(),
+      password: password.toLocaleString(),
+    };
+    console.log(sendData);
+    navigate("/home");
+  };
 
   return (
     <StyledBox
@@ -47,7 +60,7 @@ const Login = () => {
                 alignItems: "center",
                 m: "auto",
                 p: 1,
-                width: { xs: "50%", sm: "40%", md: "25%", lg: "43%" },
+                width: { xs: "40%", sm: "40%", md: "35%", lg: "30%" },
               }}
             />
 
@@ -62,46 +75,54 @@ const Login = () => {
               </Typography>
             </Grid>
 
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={6}
-              lg={12}
-              sx={{ p: 2 }}
+            <Stack
+              direction="row"
               display="flex"
               justifyContent="center"
+              spacing={1}
             >
-              <Box>
-                <TextField
-                  id="username"
-                  label="Username"
-                  variant="standard"
-                  value={username}
-                  onChange={hasSpecialCharacters}
-                />
-                {/* <Typography
-                  display="flex"
-                  justifyContent="left"
-                  sx={{ fontSize: 10 }}
-                  color={"#D98A54"}
-                  
-                >
-                  ห้ามใช้อักขระพิเศษ !@#$%^&*(),.?":{}|<></>
-                </Typography> */}
-              </Box>
-            </Grid>
+              <CardMedia
+                component="img"
+                image={User}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  m: "auto",
+                  p: 1,
+                  width: { xs: "13%", sm: "10%", md: "12%", lg: "10%" },
+                }}
+              />
 
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={6}
-              lg={12}
+              <TextField
+                id="username"
+                label="Username"
+                variant="standard"
+                value={username}
+                onChange={hasSpecialCharacters}
+              />
+            </Stack>
+
+            <Stack
+              direction="row"
               display="flex"
               justifyContent="center"
-              sx={{ p: 2 }}
+              spacing={1}
+              sx={{mt:"20px"}}
             >
+              <CardMedia
+                component="img"
+                image={Lock}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  m: "auto",
+                  p: 1,
+                  width: { xs: "13%", sm: "10%", md: "12%", lg: "10%" },
+                }}
+              />
+
               <TextField
                 id="password"
                 label="Password"
@@ -110,7 +131,7 @@ const Login = () => {
                 value={password}
                 onChange={handlePassword}
               />
-            </Grid>
+            </Stack>
 
             <Grid
               item
@@ -132,10 +153,11 @@ const Login = () => {
                   boxShadow: "2px 2px 0px 0px #4A1C04",
                   color: "#D98A54",
                   width: "60%",
-                  mt: { xs: "5%", sm: "5%", md: "0%", lg: "10%" },
+                  mt: { xs: "5%", sm: "5%", md: "10%", lg: "10%" },
                   fontWeight: "bold",
                   fontSize: 20,
                 }}
+                onClick={handleLogin}
               >
                 LOGIN
               </Button>
@@ -185,7 +207,7 @@ const StyledContainer = styled("div")(({ theme }) => ({
     backgroundColor: "#FEFDDE",
     marginTop: "20%",
     borderRadius: "20px",
-    width: "50%",
+    width: "80%",
     height: "450px",
     boxShadow: "0px 0px 10px 0px #4A1C04",
   },
@@ -193,7 +215,7 @@ const StyledContainer = styled("div")(({ theme }) => ({
     backgroundColor: "#FEFDDE",
     marginTop: "10%",
     borderRadius: "20px",
-    width: "40%",
+    width: "50%",
     height: "450px",
     boxShadow: "0px 0px 10px 0px #4A1C04",
   },
@@ -201,15 +223,15 @@ const StyledContainer = styled("div")(({ theme }) => ({
     backgroundColor: "#FEFDDE",
     borderRadius: "20px",
     marginTop: "15%",
-    width: "50%",
-    height: "350px",
+    width: "30%",
+    height: "400px",
     boxShadow: "0px 0px 10px 0px #4A1C04",
   },
   [theme.breakpoints.up("lg")]: {
     backgroundColor: "#FEFDDE",
     marginTop: "5%",
     borderRadius: "20px",
-    width: "15%",
+    width: "20%",
     height: "470px",
     boxShadow: "0px 0px 10px 0px #4A1C04",
   },

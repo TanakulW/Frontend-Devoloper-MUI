@@ -5,6 +5,7 @@ import "./index.css";
 import theme from "./theme.jsx";
 // import Login from "./page/loginPage/view/login.jsx";
 import Login from "./page/loginPage/view/login.jsx"
+import Home from "./page/homePage/view/home.jsx"
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route exact path="/" element={<Login />} />
+          <Route exact path="/home" element={<Home />} />
         </Routes>
       </Router>
     </ThemeProvider>
