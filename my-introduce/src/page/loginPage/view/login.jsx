@@ -39,7 +39,7 @@ const Login = () => {
       password: password.toLocaleString(),
     };
     console.log(sendData);
-    navigate("/home");
+    navigate("/homePage");
   };
 
   return (
