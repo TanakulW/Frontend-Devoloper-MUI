@@ -13,7 +13,6 @@ import {
   ListItemIcon,
   ListItemText,
   Stack,
-  ThemeProvider,
   Toolbar,
   Tooltip,
   Typography,
