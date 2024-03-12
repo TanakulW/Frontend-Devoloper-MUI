@@ -21,7 +21,7 @@ const contentComp = (props) => {
         sx={{
             backgroundColor: darkModeMain ? "#595959" : "  #d9d9d9",
             backgroundImage: darkModeMain ? "none" : " #595959",
-          width: "60vw",
+          width: "80vw",
           height: "80vh",
           display: "flex",
           justifyContent: "center",
