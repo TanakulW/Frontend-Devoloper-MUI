@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import {
+  Badge,
   Box,
   Button,
   Drawer,
@@ -13,6 +14,7 @@ import {
   ListItemText,
   Stack,
   Toolbar,
+  Tooltip,
   Typography,
   alpha,
   styled,
@@ -30,11 +32,15 @@ import HistoryOutlinedIcon from "@mui/icons-material/HistoryOutlined";
 import LocalOfferOutlinedIcon from "@mui/icons-material/LocalOfferOutlined";
 import LocalAtmOutlinedIcon from "@mui/icons-material/LocalAtmOutlined";
 import SettingsApplicationsOutlinedIcon from "@mui/icons-material/SettingsApplicationsOutlined";
-import PizzaMenu from "../../../assets/image/pizza-full.png";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [openTab, setOpenTab] = useState(false);
+  const navigate = useNavigate();
 
+  const handleLogout = () => {
+    navigate("/");
+  };
   const toggleDrawer = (newOpen) => () => {
     setOpenTab(newOpen);
   };
@@ -70,7 +76,7 @@ const Home = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar sx={{ backgroundColor: "#D98A54" }}>
+        <Toolbar sx={{   background:"linear-gradient(90deg, #F0BA56 10%, #D98A54 100%)", }}>
           <IconButton
             size="large"
             edge="start"
@@ -86,16 +92,28 @@ const Home = () => {
           </Drawer>
 
           <Typography
-            color={"#FCD258"}
+            color={"#FFFF"}
             sx={{ fontSize: 24, fontWeight: "bold" }}
           >
-            Pazii
+            P
+          </Typography>
+          <Typography
+            color={"#D98A54"}
+            sx={{ fontSize: 24, fontWeight: "bold" }}
+          >
+            azii
           </Typography>
           <Typography
             color={"#FFFF"}
+            sx={{ fontSize: 24, fontWeight: "bold" }}
+          >
+            P
+          </Typography>
+          <Typography
+            color={"#D32F2F"}
             sx={{ fontSize: 24, fontWeight: "bold", flexGrow: 1 }}
           >
-            Pizza
+            izza
           </Typography>
 
           <Search sx={{ mr: 5 }}>
@@ -109,19 +127,21 @@ const Home = () => {
           </Search>
 
           <Stack direction="row" spacing={1}>
-            <Button
-              sx={{
-                bgcolor: "#F9B044",
-                "&:hover": {
-                  backgroundColor: "#D32F2F",
-                  borderColor: "#D32F2F",
-                },
-                borderRadius: "20px",
-                boxShadow: "2px 2px 0px 0px #4A1C04",
-              }}
-            >
-              <ShoppingBagOutlinedIcon sx={{ color: "#ffff" }} />
-            </Button>
+            <Badge badgeContent={2} color="error">
+              <Button
+                sx={{
+                  bgcolor: "#F9B044",
+                  "&:hover": {
+                    backgroundColor: "#D32F2F",
+                    borderColor: "#D32F2F",
+                  },
+                  borderRadius: "20px",
+                  boxShadow: "2px 2px 0px 0px #4A1C04",
+                }}
+              >
+                <ShoppingBagOutlinedIcon sx={{ color: "#ffff" }} />
+              </Button>
+            </Badge>
 
             <Button
               sx={{
@@ -137,8 +157,28 @@ const Home = () => {
               <QrCode2OutlinedIcon sx={{ color: "#ffff" }} />
             </Button>
 
-            <Button
+            <Badge badgeContent={4} color="error">
+              <Button
+                sx={{
+                  bgcolor: "#F9B044",
+                  "&:hover": {
+                    backgroundColor: "#D32F2F",
+                    borderColor: "#D32F2F",
+                  },
+                  borderRadius: "20px",
+                  boxShadow: "2px 2px 0px 0px #4A1C04",
+                }}
+              >
+                <NotificationsOutlinedIcon sx={{ color: "#ffff" }} />
+              </Button>
+            </Badge>
+          </Stack>
+
+          <Tooltip title="Log Out">
+            <IconButton
+              color="inherit"
               sx={{
+                ml: 2,
                 bgcolor: "#F9B044",
                 "&:hover": {
                   backgroundColor: "#D32F2F",
@@ -147,14 +187,11 @@ const Home = () => {
                 borderRadius: "20px",
                 boxShadow: "2px 2px 0px 0px #4A1C04",
               }}
+              onClick={handleLogout}
             >
-              <NotificationsOutlinedIcon sx={{ color: "#ffff" }} />
-            </Button>
-          </Stack>
-
-          <IconButton color="inherit" sx={{ ml: 2 }}>
-            <AccountCircle />
-          </IconButton>
+              <AccountCircle />
+            </IconButton>
+          </Tooltip>
         </Toolbar>
       </AppBar>
     </Box>
