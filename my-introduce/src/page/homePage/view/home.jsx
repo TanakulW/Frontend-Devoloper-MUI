@@ -87,7 +87,7 @@ const Home = () => {
         <Toolbar
           sx={{
             // background: "linear-gradient(90deg, #F0BA56 10%, #D98A54 100%)",
-            // backgroundColor: darkMode ? "black" :"linear-gradient(90deg, #F0BA56 10%, #D98A54 100%)",
+            backgroundColor: darkMode ? "black" :"linear-gradient(90deg, #F0BA56 10%, #D98A54 100%)",
             backgroundImage: darkMode
               ? "none"
               : "linear-gradient(90deg, #F0BA56 10%, #D98A54 100%)",
