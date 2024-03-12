@@ -13,6 +13,7 @@ import {
   ListItemIcon,
   ListItemText,
   Stack,
+  ThemeProvider,
   Toolbar,
   Tooltip,
   Typography,
@@ -32,6 +33,8 @@ import HistoryOutlinedIcon from "@mui/icons-material/HistoryOutlined";
 import LocalOfferOutlinedIcon from "@mui/icons-material/LocalOfferOutlined";
 import LocalAtmOutlinedIcon from "@mui/icons-material/LocalAtmOutlined";
 import SettingsApplicationsOutlinedIcon from "@mui/icons-material/SettingsApplicationsOutlined";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -43,6 +46,12 @@ const Home = () => {
   };
   const toggleDrawer = (newOpen) => () => {
     setOpenTab(newOpen);
+  };
+
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
   };
 
   const DrawerList = (
@@ -76,7 +85,15 @@ const Home = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar sx={{   background:"linear-gradient(90deg, #F0BA56 10%, #D98A54 100%)", }}>
+        <Toolbar
+          sx={{
+            // background: "linear-gradient(90deg, #F0BA56 10%, #D98A54 100%)",
+            // backgroundColor: darkMode ? "black" :"linear-gradient(90deg, #F0BA56 10%, #D98A54 100%)",
+            backgroundImage: darkMode
+              ? "none"
+              : "linear-gradient(90deg, #F0BA56 10%, #D98A54 100%)",
+          }}
+        >
           <IconButton
             size="large"
             edge="start"
@@ -91,10 +108,7 @@ const Home = () => {
             {DrawerList}
           </Drawer>
 
-          <Typography
-            color={"#FFFF"}
-            sx={{ fontSize: 24, fontWeight: "bold" }}
-          >
+          <Typography color={"#FFFF"} sx={{ fontSize: 24, fontWeight: "bold" }}>
             P
           </Typography>
           <Typography
@@ -103,10 +117,7 @@ const Home = () => {
           >
             azii
           </Typography>
-          <Typography
-            color={"#FFFF"}
-            sx={{ fontSize: 24, fontWeight: "bold" }}
-          >
+          <Typography color={"#FFFF"} sx={{ fontSize: 24, fontWeight: "bold" }}>
             P
           </Typography>
           <Typography
@@ -174,6 +185,13 @@ const Home = () => {
             </Badge>
           </Stack>
 
+          <div>
+            <Button onClick={toggleDarkMode} sx={{color:darkMode ? "white":"black", ml: 2,}}>
+              {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+              {darkMode ? "Light Mode" : "Dark Mode"}
+            </Button>
+          </div>
+
           <Tooltip title="Log Out">
             <IconButton
               color="inherit"
@@ -193,6 +211,8 @@ const Home = () => {
             </IconButton>
           </Tooltip>
         </Toolbar>
+
+      
       </AppBar>
     </Box>
   );
