@@ -1,11 +1,18 @@
 import { Box } from "@mui/material";
 import React from "react";
 
-const contentComp = () => {
+const contentComp = (props) => {
+    const {darkModeMain}=props
+    
   return (
     <Box
       sx={{
-        backgroundColor: "brown",
+        backgroundColor: darkModeMain
+              ? "#666666"
+              : "white",
+              backgroundImage: darkModeMain
+              ? "none"
+              : "#666666",
         height: "100vh",
         display: "flex",
         justifyContent: "center",

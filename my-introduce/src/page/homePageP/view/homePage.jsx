@@ -13,7 +13,7 @@ const HomePage = () => {
         <AppBarComp setDarkModeMain={setDarkModeMain}/>
       </div>
       <div className="content">
-        <ContentComp />
+        <ContentComp darkModeMain={darkModeMain}/>
       </div>
       <div className="footer">
         <FooterComp />
