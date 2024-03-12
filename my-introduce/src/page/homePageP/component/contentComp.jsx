@@ -9,7 +9,7 @@ const contentComp = (props) => {
       sx={{
         backgroundColor: darkModeMain
               ? "#666666"
-              : "white",
+              : " #cccccc",
               backgroundImage: darkModeMain
               ? "none"
               : "#666666",

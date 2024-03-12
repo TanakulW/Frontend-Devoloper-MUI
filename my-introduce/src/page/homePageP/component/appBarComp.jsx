@@ -94,7 +94,8 @@ const AppBarComp = (props) => {
             backgroundImage: darkMode
               ? "none"
               : "linear-gradient(90deg, #F0BA56 10%, #D98A54 100%)",
-          }}
+              boxShadow: "2px 2px 0px 0px white",
+            }}
         >
           <IconButton
             size="large"
