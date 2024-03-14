@@ -1,4 +1,12 @@
-import { Box, Grid, ImageList, ImageListItem, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  CardMedia,
+  Grid,
+  ImageList,
+  ImageListItem,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
 
@@ -6,21 +14,68 @@ const cardContent = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#737373",
+        backgroundColor: "#cccccc ",
         width: "100vw",
-        height: "20vh",
+        height: "30vh",
         borderRadius: "20px",
+        boxShadow: "0px 2px 5px 0px white",
+        
       }}
+  
     >
       <Grid container spacing={2} alignItems="center">
         <Grid item xs={12}>
-          <Grid container alignItems="center" spacing={2}>
-            <Grid item>
-              <RestaurantIcon />
+          <Grid container alignItems="center" spacing={1}>
+            <Grid item marginLeft="20px">
+              <RestaurantIcon sx={{ color: "#D98A54" }} />
             </Grid>
             <Grid item>
-              <Typography>หมวดอาหาร</Typography>
+              <Typography fontSize="24px">หมวดอาหาร</Typography>
             </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid container spacing={1} alignItems="center" marginLeft="4%">
+          <Grid item xs={12}>
+            <ImageList sx={{ width: "100%" }} cols={6}>
+              {itemData.map((item) => (
+                <Grid item key={item.img}>
+                  <Button
+                    sx={{
+                      bgcolor: "#F9B044",
+                      "&:hover": {
+                        backgroundColor: "#D32F2F",
+                        borderColor: "#D32F2F",
+                      },
+                      borderRadius: "20px",
+                    }}
+                  >
+                    <img
+                      key={item.img}
+                      srcSet={`${item.img}`}
+                      src={`${item.img}`}
+                      alt={item.title}
+                    />
+
+                    <Typography
+                      sx={{
+                        position: "absolute",
+                        bottom: "10%",
+
+                        color: "#ffffff",
+
+                        padding: "5px",
+                        borderRadius: "5px",
+                        zIndex: "1",
+                        fontSize:"20px"
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
+                  </Button>
+                </Grid>
+              ))}
+            </ImageList>
           </Grid>
         </Grid>
       </Grid>
@@ -29,53 +84,30 @@ const cardContent = () => {
 };
 
 export default cardContent;
+
 const itemData = [
   {
-    img: "https://images.unsplash.com/photo-1549388604-817d15aa0110",
-    title: "Bed",
+    img: "https://cdn.1112.com/1112/public/images/Menu/ValuSet.png",
+    title: "Buy 1 Get 1 Free",
   },
   {
-    img: "https://images.unsplash.com/photo-1563298723-dcfebaa392e3",
-    title: "Kitchen",
+    img: "https://cdn.1112.com/1112/public/images/Menu/card_Chicken.png",
+    title: "Chicken",
   },
   {
-    img: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6",
-    title: "Sink",
+    img: "https://cdn.1112.com/1112/public/images/Menu/card_Pasta.png",
+    title: "Pasta",
   },
   {
-    img: "https://images.unsplash.com/photo-1525097487452-6278ff080c31",
-    title: "Books",
+    img: "https://cdn.1112.com/1112/public/images/Menu/card_Salad.png",
+    title: "Salad",
   },
   {
-    img: "https://images.unsplash.com/photo-1574180045827-681f8a1a9622",
-    title: "Chairs",
+    img: "https://cdn.1112.com/1112/public/images/Menu/card_Desserts.png",
+    title: "Desserts",
   },
   {
-    img: "https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62",
-    title: "Candle",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1530731141654-5993c3016c77",
-    title: "Laptop",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1481277542470-605612bd2d61",
-    title: "Doors",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7",
-    title: "Coffee",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee",
-    title: "Storage",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4",
-    title: "Coffee table",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1588436706487-9d55d73a39e3",
-    title: "Blinds",
+    img: "https://cdn.1112.com/1112/public/images/Menu/card_Appetizers.png",
+    title: "Appetizers",
   },
 ];
