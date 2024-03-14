@@ -3,7 +3,7 @@ import React from "react";
 
 const contentBy1get1 = () => {
   return (
-    <Grid container spacing={1} alignItems="center">
+    <Grid container spacing={1} alignItems="center" sx={{  overflow: "auto",maxHeight:"500px"}}>
       <Grid item xs={12}>
         <ImageList sx={{ width: "100%" }} cols={4}>
           {dataPizza.map((item) => (
