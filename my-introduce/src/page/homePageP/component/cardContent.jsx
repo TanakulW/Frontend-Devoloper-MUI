@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   CardMedia,
+  Divider,
   Grid,
   ImageList,
   ImageListItem,
@@ -16,12 +17,9 @@ const cardContent = () => {
       sx={{
         backgroundColor: "#cccccc ",
         width: "100vw",
-        height: "30vh",
+        height: "80vh",
         borderRadius: "20px",
-        boxShadow: "0px 2px 5px 0px white",
-        
       }}
-  
     >
       <Grid container spacing={2} alignItems="center">
         <Grid item xs={12}>
@@ -67,7 +65,7 @@ const cardContent = () => {
                         padding: "5px",
                         borderRadius: "5px",
                         zIndex: "1",
-                        fontSize:"20px"
+                        fontSize: "20px",
                       }}
                     >
                       {item.title}
@@ -78,6 +76,15 @@ const cardContent = () => {
             </ImageList>
           </Grid>
         </Grid>
+
+        <Divider
+          sx={{
+            backgroundColor: "#FFFF",
+            width: "95%",
+            ml: "3%",
+            borderWidth: "5px",
+          }}
+        />
       </Grid>
     </Box>
   );
