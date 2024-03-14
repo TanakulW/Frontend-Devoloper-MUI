@@ -10,12 +10,13 @@ import {
 } from "@mui/material";
 import React from "react";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
+import ContentBy1get1 from "../component/contentBy1get1";
 
 const cardContent = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#cccccc ",
+        backgroundColor: "white ",
         width: "100vw",
         height: "80vh",
         borderRadius: "20px",
@@ -79,12 +80,16 @@ const cardContent = () => {
 
         <Divider
           sx={{
-            backgroundColor: "#FFFF",
+            backgroundColor: "black",
             width: "95%",
             ml: "3%",
-            borderWidth: "5px",
+            borderWidth: "2px",
           }}
         />
+<Grid item xs={12}>
+ <ContentBy1get1/>
+</Grid>
+
       </Grid>
     </Box>
   );
@@ -118,3 +123,4 @@ const itemData = [
     title: "Appetizers",
   },
 ];
+
