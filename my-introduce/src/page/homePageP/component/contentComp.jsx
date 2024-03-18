@@ -3,14 +3,14 @@ import React from "react";
 import CardContent from "../component/cardContent";
 
 const contentComp = (props) => {
-  const { darkModeMain } = props;
+  const { darkModeMain ,setOrderSelect} = props;
 
   return (
     <Box
       sx={{
         backgroundColor: darkModeMain ? "#666666" : " #cccccc",
         backgroundImage: darkModeMain ? "none" : "#666666",
-        height: "100vh",
+        height: "90vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -29,7 +29,7 @@ const contentComp = (props) => {
           borderRadius: "20px",
         }}
       >
-        <CardContent />
+        <CardContent setOrderSelect={setOrderSelect} />
 
       </Box>
     </Box>

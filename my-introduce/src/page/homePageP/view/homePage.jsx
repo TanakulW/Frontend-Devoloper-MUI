@@ -3,18 +3,20 @@ import AppBarComp from "../component/appBarComp";
 import ContentComp from "../component/contentComp";
 import FooterComp from "../component/footerComp"
 import { Box } from "@mui/material";
-import ContentGet1 from "../component/contentBy1get1";
+
 
 const HomePage = () => {
     const [darkModeMain, setDarkModeMain] = useState(false)
+    const [orderSelect, setOrderSelect] = useState(0)
+
 
   return (
     <Box>
       <div className="appbar">
-        <AppBarComp setDarkModeMain={setDarkModeMain}/>
+        <AppBarComp setDarkModeMain={setDarkModeMain} orderSelect={orderSelect}/>
       </div>
       <div className="content">
-        <ContentComp darkModeMain={darkModeMain}/>
+        <ContentComp darkModeMain={darkModeMain} setOrderSelect={setOrderSelect}/>
       </div>
       <div className="footer">
         <FooterComp />

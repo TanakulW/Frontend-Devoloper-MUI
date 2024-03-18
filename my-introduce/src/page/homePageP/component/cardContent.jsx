@@ -1,18 +1,27 @@
 import {
   Box,
   Button,
-  CardMedia,
   Divider,
   Grid,
   ImageList,
-  ImageListItem,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
 import ContentBy1get1 from "../component/contentBy1get1";
+import ContentChicken from "../component/contentChicken";
+import ContentPasta from "../component/contentPasta";
 
-const cardContent = () => {
+const CardContent = (props) => {
+  const { setOrderSelect } = props;
+
+  const [selectedId, setSelectedId] = useState(null);
+ 
+  const handleButtonClick = (id) => {
+    setSelectedId(id);
+  };
+
+
   return (
     <Box
       sx={{
@@ -48,6 +57,7 @@ const cardContent = () => {
                       },
                       borderRadius: "20px",
                     }}
+                    onClick={() => handleButtonClick(item.id)}
                   >
                     <img
                       key={item.img}
@@ -86,41 +96,49 @@ const cardContent = () => {
             borderWidth: "2px",
           }}
         />
-<Grid item xs={12}>
- <ContentBy1get1/>
-</Grid>
-
+        <Grid item xs={12}>
+        {(selectedId === null || selectedId === "1") && 
+    <ContentBy1get1 setOrderSelect={setOrderSelect}/>
+  }
+          {selectedId === "2" && <ContentChicken setOrderSelect={setOrderSelect}/>}
+          {selectedId === "3" && <ContentPasta />}
+        </Grid>
       </Grid>
     </Box>
   );
 };
 
-export default cardContent;
+export default CardContent;
 
 const itemData = [
   {
+    id: "1",
     img: "https://cdn.1112.com/1112/public/images/Menu/ValuSet.png",
     title: "Buy 1 Get 1 Free",
   },
   {
+    id: "2",
     img: "https://cdn.1112.com/1112/public/images/Menu/card_Chicken.png",
     title: "Chicken",
   },
   {
+    id: "3",
     img: "https://cdn.1112.com/1112/public/images/Menu/card_Pasta.png",
     title: "Pasta",
   },
   {
+    id: "4",
     img: "https://cdn.1112.com/1112/public/images/Menu/card_Salad.png",
     title: "Salad",
   },
   {
+    id: "5",
     img: "https://cdn.1112.com/1112/public/images/Menu/card_Desserts.png",
     title: "Desserts",
   },
   {
+    id: "6",
     img: "https://cdn.1112.com/1112/public/images/Menu/card_Appetizers.png",
     title: "Appetizers",
   },
 ];
-

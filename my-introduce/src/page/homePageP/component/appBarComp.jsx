@@ -37,7 +37,7 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 
 const AppBarComp = (props) => {
-  const { setDarkModeMain } = props;
+  const { setDarkModeMain,orderSelect } = props;
   const [openTab, setOpenTab] = useState(false);
   const navigate = useNavigate();
 
@@ -141,7 +141,7 @@ const AppBarComp = (props) => {
           </Search>
 
           <Stack direction="row" spacing={1}>
-            <Badge badgeContent={2} color="error">
+            <Badge badgeContent={orderSelect} color="error">
               <Button
                 sx={{
                   bgcolor: "#F9B044",

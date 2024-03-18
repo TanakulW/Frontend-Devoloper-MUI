@@ -1,9 +1,16 @@
-import { Box, Button, Grid, IconButton, ImageList, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  IconButton,
+  ImageList,
+  Typography,
+} from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from "@mui/icons-material/Delete";
 import React, { useState } from "react";
 
-const ContentBy1get1 = (props) => {
+const ContentChicken = (props) => {
   const { setOrderSelect } = props;
   const [stateCount, setStateCount] = useState(0);
 
@@ -18,19 +25,19 @@ const ContentBy1get1 = (props) => {
       setOrderSelect(stateCount - 1);
     }
   };
-  
+
   return (
     <Grid
       container
       spacing={1}
       alignItems="center"
       sx={{ overflow: "auto", maxHeight: "500px" }}
-       pl={2}
-       pr={2}
+      pl={2}
+      pr={2}
     >
       <Grid item xs={12}>
         <ImageList sx={{ width: "100%" }} cols={4}>
-          {dataPizza.map((item) => (
+          {dataChicken.map((item) => (
             <Grid item key={item.img}>
               <Box
                 sx={{
@@ -49,9 +56,10 @@ const ContentBy1get1 = (props) => {
                   src={`${item.img}`}
                   alt={item.title}
                   style={{
-                    width: "100%",
+                    width: "70%",
                     objectFit: "cover",
                     padding: 2,
+                    paddingLeft: "15%",
                   }}
                 />
 
@@ -106,15 +114,12 @@ const ContentBy1get1 = (props) => {
                       delMenu();
                     }}
                     sx={{
-                     
                       m: 1,
                     }}
                   >
-                    <DeleteIcon sx={{color:"red"}}/>
+                    <DeleteIcon sx={{ color: "red" }} />
                   </IconButton>
                 </div>
-
-               
               </Box>
             </Grid>
           ))}
@@ -124,64 +129,68 @@ const ContentBy1get1 = (props) => {
   );
 };
 
-export default ContentBy1get1;
+export default ContentChicken;
 
-const dataPizza = [
+const dataChicken = [
   {
-    idMenu:"1",
-    img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/220265.png",
+    idMenu: "1",
+    img: "https://cdn.1112.com/1112/public//images/products/chicken/116758.png",
     title: "ไส้กรอกยั่วนัวเบคอน",
-    price: "479 ฿",
+    price: "149 ฿",
   },
   {
-    idMenu:"2",
-    img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/162216.png",
-    title: "ดับเบิ้ลชีสพิซซ่า",
-    price: "279 ฿",
+    idMenu: "2",
+    img: "https://cdn.1112.com/1112/public//images/products/chicken/116760.png",
+    title: "ไก่กรอบซอสสไปซี่ 6 ชิ้น",
+    price: "149 ฿",
   },
-  { idMenu:"3",
-    img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/162217.png",
-    title: "ดับเบิ้ลเปปเปอโรนี",
-    price: "279 ฿",
+  {
+    idMenu: "3",
+    img: "https://cdn.1112.com/1112/public//images/products/chicken/116756.png",
+    title: "ไก่กรอบซอสกระเทียม 6 ชิ้น",
+    price: "149 ฿",
   },
-  { idMenu:"4",
-    img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102204.png",
-    title: "ฮาวายเอี้ยน",
-    price: "379 ฿",
+  {
+    idMenu: "4",
+    img: "https://cdn.1112.com/1112/public//images/products/chicken/116536_1.png",
+    title: "ปีกไก่ บาร์บีคิว 6 ชิ้น",
+    price: "149 ฿",
   },
-  { idMenu:"5",
-    img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102208.png",
-    title: "ซีฟู้ดค็อกเทล",
-    price: "439 ฿",
+  {
+    idMenu: "5",
+    img: "https://cdn.1112.com/1112/public//images/products/chicken/116554_1.png",
+    title: "ปีกไก่ทอด สไตล์เกาหลี 6 ชิ้น",
+    price: "149 ฿",
   },
-  { idMenu:"6",
-    img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102201.png",
-    title: "ซุปเปอร์เดอลุกซ์",
-    price: "379 ฿",
+  {
+    idMenu: "6",
+    img: "https://cdn.1112.com/1112/public//images/products/chicken/116759.png",
+    title: "ไก่กรอบซอสหวาน 10 ชิ้น",
+    price: "219 ฿",
   },
-  { idMenu:"7",
-    img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102734.png",
-    title: "สไปซี่ ซุปเปอร์ซีฟู้ด",
-    price: "439 ฿",
+  {
+    idMenu: "7",
+    img: "https://cdn.1112.com/1112/public//images/products/chicken/116761.png",
+    title: "ไก่กรอบซอสสไปซี่ 10 ชิ้น",
+    price: "219 ฿",
   },
-  { idMenu:"8",
-    img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102228.png",
-    title: "ซีฟู้ดเดอลุกซ์",
-    price: "439 ฿",
+  {
+    idMenu: "8",
+    img: "https://cdn.1112.com/1112/public//images/products/chicken/116757.png",
+    title: "ไก่กรอบซอสกระเทียม 10 ชิ้น",
+    price: "219 ฿",
   },
-  { idMenu:"9",
-    img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102209.png",
-    title: "ค็อกเทลกุ้ง",
-    price: "439 ฿",
+  {
+    idMenu: "9",
+    img: "https://cdn.1112.com/1112/public//images/products/chicken/116539_1.png",
+    title: "ปีกไก่บาร์บีคิว 10 ชิ้น",
+    price: "219 ฿",
   },
-  { idMenu:"10",
-    img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102726.png",
-    title: "โฟร์ชีสและเบคอน",
-    price: "439 ฿",
+  {
+    idMenu: "10",
+    img: "https://cdn.1112.com/1112/public//images/products/chicken/116561_1.png",
+    title: "ปีกไก่ทอด สไตล์เกาหลี 10 ชิ้น",
+    price: "219 ฿",
   },
-  { idMenu:"11",
-    img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102725.png",
-    title: "ผักโขมอบและมะเขือเทศ",
-    price: "379 ฿",
-  },
+
 ];
