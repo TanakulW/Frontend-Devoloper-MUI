@@ -114,7 +114,7 @@ const itemData = [
   {
     id: "1",
     img: "https://cdn.1112.com/1112/public/images/Menu/ValuSet.png",
-    title: "Buy 1 Get 1 Free",
+    title: "Pizza",
   },
   {
     id: "2",
