@@ -7,8 +7,9 @@ import { Box } from "@mui/material";
 
 const HomePage = () => {
     const [darkModeMain, setDarkModeMain] = useState(false)
-    const [orderSelect, setOrderSelect] = useState(0)
-
+    // const [orderSelect, setOrderSelect] = useState([])
+    const [orderSelect, setOrderSelect] = useState([])
+console.log(orderSelect);
 
   return (
     <Box>
@@ -16,7 +17,7 @@ const HomePage = () => {
         <AppBarComp setDarkModeMain={setDarkModeMain} orderSelect={orderSelect}/>
       </div>
       <div className="content">
-        <ContentComp darkModeMain={darkModeMain} setOrderSelect={setOrderSelect}/>
+        <ContentComp darkModeMain={darkModeMain} orderSelect={orderSelect}setOrderSelect={setOrderSelect}/>
       </div>
       <div className="footer">
         <FooterComp />

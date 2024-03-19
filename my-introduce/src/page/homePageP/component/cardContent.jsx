@@ -13,14 +13,13 @@ import ContentChicken from "../component/contentChicken";
 import ContentPasta from "../component/contentPasta";
 
 const CardContent = (props) => {
-  const { setOrderSelect } = props;
+  const { setOrderSelect ,orderSelect} = props;
 
   const [selectedId, setSelectedId] = useState(null);
- 
+
   const handleButtonClick = (id) => {
     setSelectedId(id);
   };
-
 
   return (
     <Box
@@ -97,10 +96,12 @@ const CardContent = (props) => {
           }}
         />
         <Grid item xs={12}>
-        {(selectedId === null || selectedId === "1") && 
-    <ContentBy1get1 setOrderSelect={setOrderSelect}/>
-  }
-          {selectedId === "2" && <ContentChicken setOrderSelect={setOrderSelect}/>}
+          {(selectedId === null || selectedId === "1") && (
+            <ContentBy1get1 orderSelect={orderSelect}setOrderSelect={setOrderSelect} />
+          )}
+          {selectedId === "2" && (
+            <ContentChicken setOrderSelect={setOrderSelect} />
+          )}
           {selectedId === "3" && <ContentPasta />}
         </Grid>
       </Grid>

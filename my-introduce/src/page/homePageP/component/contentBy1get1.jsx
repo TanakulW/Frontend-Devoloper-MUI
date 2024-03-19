@@ -1,32 +1,44 @@
-import { Box, Button, Grid, IconButton, ImageList, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  IconButton,
+  ImageList,
+  Typography,
+} from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from "@mui/icons-material/Delete";
 import React, { useState } from "react";
 
 const ContentBy1get1 = (props) => {
-  const { setOrderSelect } = props;
-  const [stateCount, setStateCount] = useState(0);
+  const { setOrderSelect, orderSelect } = props;
+  let count = 0;
 
-  const addMenu = (idMenu) => {
-    setStateCount(stateCount + 1);
-    setOrderSelect(stateCount + 1);
+  const addMenu = (idMenu, title) => {
+    count++;
+    const sendData = {
+      id: idMenu,
+      title: title,   
+      count: count,
+    };
+
+    console.log(sendData);
+ 
   };
 
   const delMenu = () => {
-    if (stateCount > 0) {
-      setStateCount(stateCount - 1);
-      setOrderSelect(stateCount - 1);
-    }
+    // setStateCount(prevState => prevState - 1);
+    // setOrderSelect(prevState => prevState > 0 ? prevState - 1 : prevState);
   };
-  
+
   return (
     <Grid
       container
       spacing={1}
       alignItems="center"
       sx={{ overflow: "auto", maxHeight: "500px" }}
-       pl={2}
-       pr={2}
+      pl={2}
+      pr={2}
     >
       <Grid item xs={12}>
         <ImageList sx={{ width: "100%" }} cols={4}>
@@ -78,7 +90,7 @@ const ContentBy1get1 = (props) => {
                 >
                   <Button
                     onClick={() => {
-                      addMenu(item.idMenu);
+                      addMenu(item.idMenu, item.title);
                     }}
                     sx={{
                       bgcolor: "#008556",
@@ -106,15 +118,12 @@ const ContentBy1get1 = (props) => {
                       delMenu();
                     }}
                     sx={{
-                     
                       m: 1,
                     }}
                   >
-                    <DeleteIcon sx={{color:"red"}}/>
+                    <DeleteIcon sx={{ color: "red" }} />
                   </IconButton>
                 </div>
-
-               
               </Box>
             </Grid>
           ))}
@@ -128,58 +137,67 @@ export default ContentBy1get1;
 
 const dataPizza = [
   {
-    idMenu:"1",
+    idMenu: "1",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/220265.png",
     title: "ไส้กรอกยั่วนัวเบคอน",
     price: "479 ฿",
   },
   {
-    idMenu:"2",
+    idMenu: "2",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/162216.png",
     title: "ดับเบิ้ลชีสพิซซ่า",
     price: "279 ฿",
   },
-  { idMenu:"3",
+  {
+    idMenu: "3",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/162217.png",
     title: "ดับเบิ้ลเปปเปอโรนี",
     price: "279 ฿",
   },
-  { idMenu:"4",
+  {
+    idMenu: "4",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102204.png",
     title: "ฮาวายเอี้ยน",
     price: "379 ฿",
   },
-  { idMenu:"5",
+  {
+    idMenu: "5",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102208.png",
     title: "ซีฟู้ดค็อกเทล",
     price: "439 ฿",
   },
-  { idMenu:"6",
+  {
+    idMenu: "6",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102201.png",
     title: "ซุปเปอร์เดอลุกซ์",
     price: "379 ฿",
   },
-  { idMenu:"7",
+  {
+    idMenu: "7",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102734.png",
     title: "สไปซี่ ซุปเปอร์ซีฟู้ด",
     price: "439 ฿",
   },
-  { idMenu:"8",
+  {
+    idMenu: "8",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102228.png",
     title: "ซีฟู้ดเดอลุกซ์",
     price: "439 ฿",
   },
-  { idMenu:"9",
+  {
+    idMenu: "9",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102209.png",
     title: "ค็อกเทลกุ้ง",
     price: "439 ฿",
   },
-  { idMenu:"10",
+  {
+    idMenu: "10",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102726.png",
     title: "โฟร์ชีสและเบคอน",
     price: "439 ฿",
   },
-  { idMenu:"11",
+  {
+    idMenu: "11",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102725.png",
     title: "ผักโขมอบและมะเขือเทศ",
     price: "379 ฿",

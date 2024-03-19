@@ -2,6 +2,7 @@ import {
   Badge,
   Box,
   Button,
+  CardMedia,
   Drawer,
   IconButton,
   InputBase,
@@ -10,6 +11,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Modal,
   Stack,
   Toolbar,
   Tooltip,
@@ -35,9 +37,11 @@ import QrCode2OutlinedIcon from "@mui/icons-material/QrCode2Outlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
+import QR from "../../../assets/image/QRCODE.png";
+
 
 const AppBarComp = (props) => {
-  const { setDarkModeMain,orderSelect } = props;
+  const { setDarkModeMain, orderSelect } = props;
   const [openTab, setOpenTab] = useState(false);
   const navigate = useNavigate();
 
@@ -54,6 +58,12 @@ const AppBarComp = (props) => {
     setDarkMode(!darkMode);
     setDarkModeMain(!darkMode);
   };
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+
 
   const DrawerList = (
     <Box
@@ -94,8 +104,8 @@ const AppBarComp = (props) => {
             backgroundImage: darkMode
               ? "none"
               : "linear-gradient(90deg, #F0BA56 10%, #D98A54 100%)",
-              boxShadow: "2px 2px 0px 0px white",
-            }}
+            boxShadow: "2px 2px 0px 0px white",
+          }}
         >
           <IconButton
             size="large"
@@ -141,7 +151,7 @@ const AppBarComp = (props) => {
           </Search>
 
           <Stack direction="row" spacing={1}>
-            <Badge badgeContent={orderSelect} color="error">
+            <Badge badgeContent={1} color="error">
               <Button
                 sx={{
                   bgcolor: "#F9B044",
@@ -167,9 +177,31 @@ const AppBarComp = (props) => {
                 borderRadius: "20px",
                 boxShadow: "2px 2px 0px 0px #4A1C04",
               }}
+              onClick={handleOpen}
             >
               <QrCode2OutlinedIcon sx={{ color: "#ffff" }} />
             </Button>
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+              <CardMedia
+              component="img"
+              image={QR}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                m: "auto",
+                p: 1,
+                // width: { xs: "40%", sm: "40%", md: "35%", lg: "100%" },
+              }}
+            />
+              </Box>
+            </Modal>
 
             <Badge badgeContent={4} color="error">
               <Button
@@ -265,3 +297,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};

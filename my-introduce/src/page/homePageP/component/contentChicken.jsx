@@ -12,18 +12,16 @@ import React, { useState } from "react";
 
 const ContentChicken = (props) => {
   const { setOrderSelect } = props;
-  const [stateCount, setStateCount] = useState(0);
+
 
   const addMenu = (idMenu) => {
-    setStateCount(stateCount + 1);
-    setOrderSelect(stateCount + 1);
+    setOrderSelect(prevState => prevState + 1);
   };
 
   const delMenu = () => {
-    if (stateCount > 0) {
-      setStateCount(stateCount - 1);
-      setOrderSelect(stateCount - 1);
-    }
+
+      setOrderSelect(prevState => prevState > 0 ? prevState - 1 : prevState);
+    
   };
 
   return (
@@ -56,10 +54,11 @@ const ContentChicken = (props) => {
                   src={`${item.img}`}
                   alt={item.title}
                   style={{
-                    width: "70%",
+                    width: "85%",
+                    height: "258px",
                     objectFit: "cover",
-                    padding: 2,
-                    paddingLeft: "15%",
+                    padding: 1,
+                    paddingLeft: "10%",
                   }}
                 />
 

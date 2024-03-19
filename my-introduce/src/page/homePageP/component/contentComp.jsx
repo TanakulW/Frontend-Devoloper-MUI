@@ -3,7 +3,7 @@ import React from "react";
 import CardContent from "../component/cardContent";
 
 const contentComp = (props) => {
-  const { darkModeMain ,setOrderSelect} = props;
+  const { darkModeMain ,orderSelect,setOrderSelect} = props;
 
   return (
     <Box
@@ -29,7 +29,7 @@ const contentComp = (props) => {
           borderRadius: "20px",
         }}
       >
-        <CardContent setOrderSelect={setOrderSelect} />
+        <CardContent orderSelect={orderSelect}setOrderSelect={setOrderSelect} />
 
       </Box>
     </Box>
