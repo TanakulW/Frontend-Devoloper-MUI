@@ -13,9 +13,8 @@ import React, { useState } from "react";
 
 const ContentBy1get1 = (props) => {
   const { setOrderSelect, orderSelect } = props;
-  let count = 0;
+  
   const [selectedItems, setSelectedItems] = useState({});
-
 
   // const addMenu = (idMenu, title) => {
   //   count++;
@@ -27,12 +26,19 @@ const ContentBy1get1 = (props) => {
 
   //   console.log(sendData);
   // };
-
+  let count = 0;
   const addMenu = (id, title) => {
     setSelectedItems((prevSelectedItems) => ({
       ...prevSelectedItems,
       [id]: (prevSelectedItems[id] || 0) + 1,
     }));
+    const sendData = {
+      id: id,
+      title: title,
+      count: ++count,
+    };
+    console.log(sendData);
+    // setOrderSelect(sendData);
   };
 
   const delMenu = (id) => {
@@ -63,7 +69,7 @@ const ContentBy1get1 = (props) => {
               <Badge
                 badgeContent={selectedItems[item.idMenu] || 0}
                 color="error"
-                sx={{ mt: 2, mr:1}}
+                sx={{ mt: 2, mr: 1 }}
               >
                 <Box
                   sx={{

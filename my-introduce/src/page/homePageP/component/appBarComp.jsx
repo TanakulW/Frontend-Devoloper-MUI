@@ -151,7 +151,7 @@ const AppBarComp = (props) => {
           </Search>
 
           <Stack direction="row" spacing={1}>
-            <Badge badgeContent={1} color="error">
+            <Badge badgeContent={0} color="error">
               <Button
                 sx={{
                   bgcolor: "#F9B044",

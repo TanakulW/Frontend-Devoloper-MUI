@@ -9,7 +9,7 @@ const HomePage = () => {
     const [darkModeMain, setDarkModeMain] = useState(false)
     // const [orderSelect, setOrderSelect] = useState([])
     const [orderSelect, setOrderSelect] = useState([])
-
+console.log(orderSelect);
   return (
     <Box>
       <div className="appbar">
