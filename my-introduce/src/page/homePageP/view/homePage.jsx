@@ -19,7 +19,7 @@ const HomePage = () => {
         <ContentComp darkModeMain={darkModeMain} orderSelect={orderSelect}setOrderSelect={setOrderSelect}/>
       </div>
       <div className="footer">
-        <FooterComp />
+        <FooterComp darkModeMain={darkModeMain}/>
       </div>
     </Box>
   );
