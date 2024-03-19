@@ -1,4 +1,5 @@
 import {
+  Badge,
   Box,
   Button,
   Grid,
@@ -13,22 +14,37 @@ import React, { useState } from "react";
 const ContentBy1get1 = (props) => {
   const { setOrderSelect, orderSelect } = props;
   let count = 0;
+  const [selectedItems, setSelectedItems] = useState({});
 
-  const addMenu = (idMenu, title) => {
-    count++;
-    const sendData = {
-      id: idMenu,
-      title: title,   
-      count: count,
-    };
 
-    console.log(sendData);
- 
+  // const addMenu = (idMenu, title) => {
+  //   count++;
+  //   const sendData = {
+  //     id: idMenu,
+  //     title: title,
+  //     count: count,
+  //   };
+
+  //   console.log(sendData);
+  // };
+
+  const addMenu = (id, title) => {
+    setSelectedItems((prevSelectedItems) => ({
+      ...prevSelectedItems,
+      [id]: (prevSelectedItems[id] || 0) + 1,
+    }));
   };
 
-  const delMenu = () => {
-    // setStateCount(prevState => prevState - 1);
-    // setOrderSelect(prevState => prevState > 0 ? prevState - 1 : prevState);
+  const delMenu = (id) => {
+    setSelectedItems((prevSelectedItems) => {
+      const updatedItems = { ...prevSelectedItems };
+
+      if (updatedItems[id] && updatedItems[id] > 0) {
+        updatedItems[id] -= 1;
+      }
+
+      return updatedItems;
+    });
   };
 
   return (
@@ -44,87 +60,93 @@ const ContentBy1get1 = (props) => {
         <ImageList sx={{ width: "100%" }} cols={4}>
           {dataPizza.map((item) => (
             <Grid item key={item.img}>
-              <Box
-                sx={{
-                  bgcolor: "white",
-                  "&:hover": {
-                    backgroundColor: "#F9B044",
-                    borderColor: "#F9B044",
-                  },
-                  borderRadius: "20px",
-                  border: "2px solid green",
-                }}
+              <Badge
+                badgeContent={selectedItems[item.idMenu] || 0}
+                color="error"
+                sx={{ mt: 2, mr:1}}
               >
-                <img
-                  key={item.img}
-                  srcSet={`${item.img}`}
-                  src={`${item.img}`}
-                  alt={item.title}
-                  style={{
-                    width: "100%",
-                    objectFit: "cover",
-                    padding: 2,
-                  }}
-                />
-
-                <Typography
+                <Box
                   sx={{
-                    bottom: "10%",
-                    color: "red",
-                    borderRadius: "5px",
-                    zIndex: "1",
-                    fontSize: "20px",
-                    display: "flex",
-                    justifyContent: "center",
+                    bgcolor: "white",
+                    "&:hover": {
+                      backgroundColor: "#F9B044",
+                      borderColor: "#F9B044",
+                    },
+                    borderRadius: "20px",
+                    border: "2px solid green",
                   }}
                 >
-                  {item.title}
-                </Typography>
-
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Button
-                    onClick={() => {
-                      addMenu(item.idMenu, item.title);
+                  <img
+                    key={item.img}
+                    srcSet={`${item.img}`}
+                    src={`${item.img}`}
+                    alt={item.title}
+                    style={{
+                      width: "100%",
+                      objectFit: "cover",
+                      padding: 2,
                     }}
+                  />
+
+                  <Typography
                     sx={{
-                      bgcolor: "#008556",
-                      "&:hover": {
-                        backgroundColor: "#2C6837",
-                        borderColor: "#2C6837",
-                      },
-                      m: 1,
+                      bottom: "10%",
+                      color: "red",
+                      borderRadius: "5px",
+                      zIndex: "1",
+                      fontSize: "20px",
+                      display: "flex",
+                      justifyContent: "center",
                     }}
                   >
-                    <Typography
+                    {item.title}
+                  </Typography>
+
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Button
+                      onClick={() => {
+                        addMenu(item.idMenu, item.title);
+                      }}
                       sx={{
-                        color: "white",
-                        display: "flex",
+                        bgcolor: "#008556",
+                        "&:hover": {
+                          backgroundColor: "#2C6837",
+                          borderColor: "#2C6837",
+                        },
+                        m: 1,
                       }}
                     >
-                      {item.price}
-                      <AddIcon />
-                      เลือก
-                    </Typography>
-                  </Button>
+                      <Typography
+                        sx={{
+                          color: "white",
+                          display: "flex",
+                        }}
+                      >
+                        {item.price}
+                        <AddIcon />
+                        เลือก
+                      </Typography>
+                    </Button>
 
-                  <IconButton
-                    onClick={() => {
-                      delMenu();
-                    }}
-                    sx={{
-                      m: 1,
-                    }}
-                  >
-                    <DeleteIcon sx={{ color: "red" }} />
-                  </IconButton>
-                </div>
-              </Box>
+                    <IconButton
+                      onClick={() => {
+                        delMenu(item.idMenu);
+                      }}
+                      sx={{
+                        m: 1,
+                      }}
+                    >
+                      <DeleteIcon sx={{ color: "red" }} />
+                    </IconButton>
+                  </div>
+                </Box>
+              </Badge>
             </Grid>
           ))}
         </ImageList>

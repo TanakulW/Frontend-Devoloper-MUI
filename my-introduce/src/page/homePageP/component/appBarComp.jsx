@@ -197,7 +197,7 @@ const AppBarComp = (props) => {
                 alignItems: "center",
                 m: "auto",
                 p: 1,
-                // width: { xs: "40%", sm: "40%", md: "35%", lg: "100%" },
+           
               }}
             />
               </Box>
