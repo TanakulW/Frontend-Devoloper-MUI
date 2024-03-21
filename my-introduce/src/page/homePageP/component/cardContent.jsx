@@ -11,6 +11,10 @@ import RestaurantIcon from "@mui/icons-material/Restaurant";
 import ContentBy1get1 from "../component/contentBy1get1";
 import ContentChicken from "../component/contentChicken";
 import ContentPasta from "../component/contentPasta";
+import ContentSalad from "../component/contentSalad"
+import ContentDesserts from "../component/contentDesserts"
+import ContentAppetizers from "../component/contentAppetizes"
+
 
 const CardContent = (props) => {
   const { setOrderSelect ,orderSelect} = props;
@@ -103,6 +107,9 @@ const CardContent = (props) => {
             <ContentChicken setOrderSelect={setOrderSelect} />
           )}
           {selectedId === "3" && <ContentPasta />}
+          {selectedId === "4" && <ContentSalad />}
+          {selectedId === "5" && <ContentDesserts />}
+          {selectedId === "6" && <ContentAppetizers />}
         </Grid>
       </Grid>
     </Box>
@@ -130,7 +137,7 @@ const itemData = [
   {
     id: "4",
     img: "https://cdn.1112.com/1112/public/images/Menu/card_Salad.png",
-    title: "Salad",
+    title: "Salad && Steak",
   },
   {
     id: "5",
