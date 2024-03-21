@@ -1,5 +1,4 @@
 import {
-  Badge,
   Box,
   Button,
   Grid,
@@ -98,16 +97,7 @@ const ContentSalad = () => {
                       </Typography>
                     </Button>
 
-                    <IconButton
-                      onClick={() => {
-                        // delMenu(item.idMenu);
-                      }}
-                      sx={{
-                        m: 1,
-                      }}
-                    >
-                      <DeleteIcon sx={{ color: "red" }} />
-                    </IconButton>
+                  
                   </div>
                 </Box>
       

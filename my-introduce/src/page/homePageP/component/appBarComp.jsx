@@ -40,6 +40,7 @@ import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import QR from "../../../assets/image/QRCODE.png";
+import ContentListMenu from "../component/contentListMenu"
 
 const AppBarComp = (props) => {
   const { setDarkModeMain, orderSelect } = props;
@@ -176,15 +177,13 @@ const AppBarComp = (props) => {
               </Button>
 
               <Menu
-             
                 anchorEl={anchorEl}
                 open={openList}
                 onClose={handleCloseList}
-                
+                sx={{ mt: 1 }}
               >
-                <MenuItem onClick={handleCloseList}>Profile</MenuItem>
-                <MenuItem onClick={handleCloseList}>My account</MenuItem>
-                <MenuItem onClick={handleCloseList}>Logout</MenuItem>
+                <ContentListMenu/>
+               
               </Menu>
             </Badge>
 

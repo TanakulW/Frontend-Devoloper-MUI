@@ -68,11 +68,7 @@ const ContentBy1get1 = (props) => {
         <ImageList sx={{ width: "100%" }} cols={4}>
           {dataPizza.map((item) => (
             <Grid item key={item.img}>
-              <Badge
-                badgeContent={selectedItems[item.idMenu] || 0}
-                color="error"
-                sx={{ mt: 2, mr: 1 }}
-              >
+             
                 <Box
                   sx={{
                     bgcolor: "white",
@@ -142,19 +138,10 @@ const ContentBy1get1 = (props) => {
                       </Typography>
                     </Button>
 
-                    <IconButton
-                      onClick={() => {
-                        delMenu(item.idMenu);
-                      }}
-                      sx={{
-                        m: 1,
-                      }}
-                    >
-                      <DeleteIcon sx={{ color: "red" }} />
-                    </IconButton>
+                 
                   </div>
                 </Box>
-              </Badge>
+            
             </Grid>
           ))}
         </ImageList>
