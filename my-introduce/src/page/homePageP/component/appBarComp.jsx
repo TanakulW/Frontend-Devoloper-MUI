@@ -11,6 +11,8 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Menu,
+  MenuItem,
   Modal,
   Stack,
   Toolbar,
@@ -39,7 +41,6 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import QR from "../../../assets/image/QRCODE.png";
 
-
 const AppBarComp = (props) => {
   const { setDarkModeMain, orderSelect } = props;
   const [openTab, setOpenTab] = useState(false);
@@ -63,7 +64,14 @@ const AppBarComp = (props) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-
+  const [anchorEl, setAnchorEl] = useState(null);
+  const openList = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleCloseList = () => {
+    setAnchorEl(null);
+  };
 
   const DrawerList = (
     <Box
@@ -162,9 +170,22 @@ const AppBarComp = (props) => {
                   borderRadius: "20px",
                   boxShadow: "2px 2px 0px 0px #4A1C04",
                 }}
+                onClick={handleClick}
               >
                 <ShoppingBagOutlinedIcon sx={{ color: "#ffff" }} />
               </Button>
+
+              <Menu
+             
+                anchorEl={anchorEl}
+                open={openList}
+                onClose={handleCloseList}
+                
+              >
+                <MenuItem onClick={handleCloseList}>Profile</MenuItem>
+                <MenuItem onClick={handleCloseList}>My account</MenuItem>
+                <MenuItem onClick={handleCloseList}>Logout</MenuItem>
+              </Menu>
             </Badge>
 
             <Button
@@ -181,25 +202,20 @@ const AppBarComp = (props) => {
             >
               <QrCode2OutlinedIcon sx={{ color: "#ffff" }} />
             </Button>
-            <Modal
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-            >
+
+            <Modal open={open} onClose={handleClose}>
               <Box sx={style}>
-              <CardMedia
-              component="img"
-              image={QR}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                m: "auto",
-                p: 1,
-           
-              }}
-            />
+                <CardMedia
+                  component="img"
+                  image={QR}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    m: "auto",
+                    p: 1,
+                  }}
+                />
               </Box>
             </Modal>
 
@@ -299,13 +315,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 1000,
+  height: 800,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
