@@ -99,6 +99,7 @@ const CardContent = (props) => {
             borderWidth: "2px",
           }}
         />
+        
         <Grid item xs={12}>
           {(selectedId === null || selectedId === "1") && (
             <ContentBy1get1 orderSelect={orderSelect}setOrderSelect={setOrderSelect} />
