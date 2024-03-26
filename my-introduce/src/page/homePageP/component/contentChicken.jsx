@@ -1,38 +1,8 @@
-import {
-  Badge,
-  Box,
-  Button,
-  Grid,
-  IconButton,
-  ImageList,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Grid, ImageList, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import DeleteIcon from "@mui/icons-material/Delete";
-import React, { useState } from "react";
+import React from "react";
 
-const ContentChicken = (props) => {
-  const { setOrderSelect } = props;
-  const [selectedItems, setSelectedItems] = useState({});
-
-  const addMenu = (id, title) => {
-    setSelectedItems((prevSelectedItems) => ({
-      ...prevSelectedItems,
-      [id]: (prevSelectedItems[id] || 0) + 1,
-    }));
-  };
-
-  const delMenu = (id) => {
-    setSelectedItems((prevSelectedItems) => {
-      const updatedItems = { ...prevSelectedItems };
-
-      if (updatedItems[id] && updatedItems[id] > 0) {
-        updatedItems[id] -= 1;
-      }
-
-      return updatedItems;
-    });
-  };
+const ContentChicken = () => {
   return (
     <Grid
       container
@@ -46,81 +16,75 @@ const ContentChicken = (props) => {
         <ImageList sx={{ width: "100%" }} cols={4}>
           {dataChicken.map((item) => (
             <Grid item key={item.img}>
-            
-                <Box
+              <Box
+                sx={{
+                  bgcolor: "white",
+                  "&:hover": {
+                    backgroundColor: "#F9B044",
+                    borderColor: "#F9B044",
+                  },
+                  borderRadius: "20px",
+                  border: "2px solid green",
+                }}
+              >
+                <img
+                  key={item.img}
+                  srcSet={`${item.img}`}
+                  src={`${item.img}`}
+                  alt={item.title}
+                  style={{
+                    width: "86%",
+                    objectFit: "cover",
+                    padding: 1,
+                    paddingLeft: 30,
+                  }}
+                />
+
+                <Typography
                   sx={{
-                    bgcolor: "white",
-                    "&:hover": {
-                      backgroundColor: "#F9B044",
-                      borderColor: "#F9B044",
-                    },
-                    borderRadius: "20px",
-                    border: "2px solid green",
+                    bottom: "10%",
+                    color: "red",
+                    borderRadius: "5px",
+                    zIndex: "1",
+                    fontSize: "20px",
+                    display: "flex",
+                    justifyContent: "center",
                   }}
                 >
-                  <img
-                    key={item.img}
-                    srcSet={`${item.img}`}
-                    src={`${item.img}`}
-                    alt={item.title}
-                    style={{
-                      width: "86%",
-                      objectFit: "cover",
-                      padding: 1,
-                      paddingLeft:30
-                    }}
-                  />
+                  {item.title}
+                </Typography>
 
-                  <Typography
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Button
+                    onClick={() => {}}
                     sx={{
-                      bottom: "10%",
-                      color: "red",
-                      borderRadius: "5px",
-                      zIndex: "1",
-                      fontSize: "20px",
-                      display: "flex",
-                      justifyContent: "center",
+                      bgcolor: "#008556",
+                      "&:hover": {
+                        backgroundColor: "#2C6837",
+                        borderColor: "#2C6837",
+                      },
+                      m: 1,
                     }}
                   >
-                    {item.title}
-                  </Typography>
-
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Button
-                      onClick={() => {
-                        addMenu(item.idMenu);
-                      }}
+                    <Typography
                       sx={{
-                        bgcolor: "#008556",
-                        "&:hover": {
-                          backgroundColor: "#2C6837",
-                          borderColor: "#2C6837",
-                        },
-                        m: 1,
+                        color: "white",
+                        display: "flex",
                       }}
                     >
-                      <Typography
-                        sx={{
-                          color: "white",
-                          display: "flex",
-                        }}
-                      >
-                        {item.price}
-                        <AddIcon />
-                        เลือก
-                      </Typography>
-                    </Button>
-
-                
-                  </div>
-                </Box>
-             
+                      {item.price}
+                      <AddIcon />
+                      เลือก
+                    </Typography>
+                  </Button>
+                </div>
+              </Box>
             </Grid>
           ))}
         </ImageList>

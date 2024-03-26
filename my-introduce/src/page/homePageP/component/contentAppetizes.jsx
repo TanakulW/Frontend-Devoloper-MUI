@@ -1,114 +1,100 @@
-import {
-  Box,
-  Button,
-  Grid,
-  IconButton,
-  ImageList,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Grid, ImageList, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import DeleteIcon from "@mui/icons-material/Delete";
-import React, { useState } from "react";
+import React from "react";
 
 const ContentAppetizes = () => {
-  const [selectedItems, setSelectedItems] = useState({});
   return (
     <Grid
-    container
-    spacing={1}
-    alignItems="center"
-    sx={{ overflow: "auto", maxHeight: "500px" }}
-    pl={2}
-    pr={2}
-  >
-    <Grid item xs={12}>
-      <ImageList sx={{ width: "100%" }} cols={4}>
-        {dataAppetize.map((item) => (
-          <Grid item key={item.img}>
-            <Box
-              sx={{
-                bgcolor: "white",
-                "&:hover": {
-                  backgroundColor: "#F9B044",
-                  borderColor: "#F9B044",
-                },
-                borderRadius: "20px",
-                border: "2px solid green",
-                m: "5px",
-                mt: 2,
-              }}
-            >
-              <img
-                key={item.img}
-                srcSet={`${item.img}`}
-                src={`${item.img}`}
-                alt={item.title}
-                style={{
-                  width: "95%",
-                  objectFit: "cover",
-                  padding: 2,
-                }}
-              />
-
-              <Typography
+      container
+      spacing={1}
+      alignItems="center"
+      sx={{ overflow: "auto", maxHeight: "500px" }}
+      pl={2}
+      pr={2}
+    >
+      <Grid item xs={12}>
+        <ImageList sx={{ width: "100%" }} cols={4}>
+          {dataAppetize.map((item) => (
+            <Grid item key={item.img}>
+              <Box
                 sx={{
-                  bottom: "10%",
-                  color: "red",
-                  borderRadius: "5px",
-                  zIndex: "1",
-                  fontSize: "20px",
-                  display: "flex",
-                  justifyContent: "center",
+                  bgcolor: "white",
+                  "&:hover": {
+                    backgroundColor: "#F9B044",
+                    borderColor: "#F9B044",
+                  },
+                  borderRadius: "20px",
+                  border: "2px solid green",
                 }}
               >
-                {item.title}
-              </Typography>
-
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Button
-                  onClick={() => {
-                    // addMenu(item.idMenu, item.title);
+                <img
+                  key={item.img}
+                  srcSet={`${item.img}`}
+                  src={`${item.img}`}
+                  alt={item.title}
+                  style={{
+                    width: "95%",
+                    objectFit: "cover",
+                    padding: 2,
                   }}
+                />
+
+                <Typography
                   sx={{
-                    bgcolor: "#008556",
-                    "&:hover": {
-                      backgroundColor: "#2C6837",
-                      borderColor: "#2C6837",
-                    },
-                    m: 1,
+                    bottom: "10%",
+                    color: "red",
+                    borderRadius: "5px",
+                    zIndex: "1",
+                    fontSize: "20px",
+                    display: "flex",
+                    justifyContent: "center",
                   }}
                 >
-                  <Typography
+                  {item.title}
+                </Typography>
+
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Button
+                    onClick={() => {
+                      // addMenu(item.idMenu, item.title);
+                    }}
                     sx={{
-                      color: "white",
-                      display: "flex",
+                      bgcolor: "#008556",
+                      "&:hover": {
+                        backgroundColor: "#2C6837",
+                        borderColor: "#2C6837",
+                      },
+                      m: 1,
                     }}
                   >
-                    {item.price}
-                    <AddIcon />
-                    เลือก
-                  </Typography>
-                </Button>
-
-               
-              </div>
-            </Box>
-          </Grid>
-        ))}
-      </ImageList>
+                    <Typography
+                      sx={{
+                        color: "white",
+                        display: "flex",
+                      }}
+                    >
+                      {item.price}
+                      <AddIcon />
+                      เลือก
+                    </Typography>
+                  </Button>
+                </div>
+              </Box>
+            </Grid>
+          ))}
+        </ImageList>
+      </Grid>
     </Grid>
-  </Grid>
-  )
-}
+  );
+};
 
-export default ContentAppetizes
-
+export default ContentAppetizes;
 
 const dataAppetize = [
   {

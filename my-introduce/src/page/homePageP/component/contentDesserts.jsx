@@ -1,17 +1,8 @@
-import {
-  Box,
-  Button,
-  Grid,
-  IconButton,
-  ImageList,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Grid, ImageList, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import DeleteIcon from "@mui/icons-material/Delete";
-import React, { useState } from "react";
+import React from "react";
 
 const ContentDesserts = () => {
-  const [selectedItems, setSelectedItems] = useState({});
   return (
     <Grid
       container
@@ -34,8 +25,6 @@ const ContentDesserts = () => {
                   },
                   borderRadius: "20px",
                   border: "2px solid green",
-                  m: "5px",
-                  mt: 2,
                 }}
               >
                 <img
@@ -95,8 +84,6 @@ const ContentDesserts = () => {
                       เลือก
                     </Typography>
                   </Button>
-
-                 
                 </div>
               </Box>
             </Grid>

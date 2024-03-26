@@ -1,19 +1,8 @@
-import {
-
-  Box,
-  Button,
-  Grid,
-  IconButton,
-  ImageList,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Grid, ImageList, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import DeleteIcon from "@mui/icons-material/Delete";
-import React, { useState } from "react";
+import React from "react";
 
 const ContentPasta = () => {
-  const [selectedItems, setSelectedItems] = useState({});
-
   return (
     <Grid
       container
@@ -27,82 +16,76 @@ const ContentPasta = () => {
         <ImageList sx={{ width: "100%" }} cols={4}>
           {dataPasta.map((item) => (
             <Grid item key={item.img}>
-             
-                <Box
+              <Box
+                sx={{
+                  bgcolor: "white",
+                  "&:hover": {
+                    backgroundColor: "#F9B044",
+                    borderColor: "#F9B044",
+                  },
+                  borderRadius: "20px",
+                  border: "2px solid green",
+                }}
+              >
+                <img
+                  key={item.img}
+                  srcSet={`${item.img}`}
+                  src={`${item.img}`}
+                  alt={item.title}
+                  style={{
+                    width: "90%",
+                    objectFit: "cover",
+                    paddingLeft: 20,
+                  }}
+                />
+
+                <Typography
                   sx={{
-                    bgcolor: "white",
-                    "&:hover": {
-                      backgroundColor: "#F9B044",
-                      borderColor: "#F9B044",
-                    },
-                    borderRadius: "20px",
-                    border: "2px solid green",
-                    m: "5px",
-                    mt:2
+                    bottom: "10%",
+                    color: "red",
+                    borderRadius: "5px",
+                    zIndex: "1",
+                    fontSize: "20px",
+                    display: "flex",
+                    justifyContent: "center",
                   }}
                 >
-                  <img
-                    key={item.img}
-                    srcSet={`${item.img}`}
-                    src={`${item.img}`}
-                    alt={item.title}
-                    style={{
-                      width: "90%",
-                      objectFit: "cover",
-                      paddingLeft: 20,
-                    }}
-                  />
+                  {item.title}
+                </Typography>
 
-                  <Typography
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Button
+                    onClick={() => {
+                      // addMenu(item.idMenu, item.title);
+                    }}
                     sx={{
-                      bottom: "10%",
-                      color: "red",
-                      borderRadius: "5px",
-                      zIndex: "1",
-                      fontSize: "20px",
-                      display: "flex",
-                      justifyContent: "center",
+                      bgcolor: "#008556",
+                      "&:hover": {
+                        backgroundColor: "#2C6837",
+                        borderColor: "#2C6837",
+                      },
+                      m: 1,
                     }}
                   >
-                    {item.title}
-                  </Typography>
-
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Button
-                      onClick={() => {
-                        // addMenu(item.idMenu, item.title);
-                      }}
+                    <Typography
                       sx={{
-                        bgcolor: "#008556",
-                        "&:hover": {
-                          backgroundColor: "#2C6837",
-                          borderColor: "#2C6837",
-                        },
-                        m: 1,
+                        color: "white",
+                        display: "flex",
                       }}
                     >
-                      <Typography
-                        sx={{
-                          color: "white",
-                          display: "flex",
-                        }}
-                      >
-                        {item.price}
-                        <AddIcon />
-                        เลือก
-                      </Typography>
-                    </Button>
-
-                  
-                  </div>
-                </Box>
-      
+                      {item.price}
+                      <AddIcon />
+                      เลือก
+                    </Typography>
+                  </Button>
+                </div>
+              </Box>
             </Grid>
           ))}
         </ImageList>
