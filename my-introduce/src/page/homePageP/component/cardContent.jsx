@@ -11,14 +11,11 @@ import RestaurantIcon from "@mui/icons-material/Restaurant";
 import ContentBy1get1 from "../component/contentBy1get1";
 import ContentChicken from "../component/contentChicken";
 import ContentPasta from "../component/contentPasta";
-import ContentSalad from "../component/contentSalad"
-import ContentDesserts from "../component/contentDesserts"
-import ContentAppetizers from "../component/contentAppetizes"
+import ContentSalad from "../component/contentSalad";
+import ContentDesserts from "../component/contentDesserts";
+import ContentAppetizers from "../component/contentAppetizes";
 
-
-const CardContent = (props) => {
-  const { setOrderSelect ,orderSelect} = props;
-
+const CardContent = () => {
   const [selectedId, setSelectedId] = useState(null);
 
   const handleButtonClick = (id) => {
@@ -99,14 +96,10 @@ const CardContent = (props) => {
             borderWidth: "2px",
           }}
         />
-        
+
         <Grid item xs={12}>
-          {(selectedId === null || selectedId === "1") && (
-            <ContentBy1get1 orderSelect={orderSelect}setOrderSelect={setOrderSelect} />
-          )}
-          {selectedId === "2" && (
-            <ContentChicken setOrderSelect={setOrderSelect} />
-          )}
+          {(selectedId === null || selectedId === "1") && <ContentBy1get1 />}
+          {selectedId === "2" && <ContentChicken />}
           {selectedId === "3" && <ContentPasta />}
           {selectedId === "4" && <ContentSalad />}
           {selectedId === "5" && <ContentDesserts />}

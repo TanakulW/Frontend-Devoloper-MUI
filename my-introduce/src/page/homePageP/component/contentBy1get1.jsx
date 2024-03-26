@@ -1,58 +1,8 @@
-import {
-  Badge,
-  Box,
-  Button,
-  Grid,
-  IconButton,
-  ImageList,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Grid, ImageList, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import DeleteIcon from "@mui/icons-material/Delete";
-import React, { useState } from "react";
+import React from "react";
 
-const ContentBy1get1 = (props) => {
-  const { setOrderSelect, orderSelect } = props;
-
-  const [selectedItems, setSelectedItems] = useState({});
-
-  // const addMenu = (idMenu, title) => {
-  //   count++;
-  //   const sendData = {
-  //     id: idMenu,
-  //     title: title,
-  //     count: count,
-  //   };
-
-  //   console.log(sendData);
-  // };
-  let count = 0;
-  const addMenu = (id, title) => {
-    setSelectedItems((prevSelectedItems) => ({
-      ...prevSelectedItems,
-      [id]: (prevSelectedItems[id] || 0) + 1,
-    }));
-    const sendData = {
-      id: id,
-      title: title,
-      count: ++count,
-    };
-    console.log(sendData);
-    // setOrderSelect(sendData);
-  };
-
-  const delMenu = (id) => {
-    setSelectedItems((prevSelectedItems) => {
-      const updatedItems = { ...prevSelectedItems };
-
-      if (updatedItems[id] && updatedItems[id] > 0) {
-        updatedItems[id] -= 1;
-      }
-
-      return updatedItems;
-    });
-  };
-
+const ContentBy1get1 = () => {
   return (
     <Grid
       container
@@ -111,9 +61,7 @@ const ContentBy1get1 = (props) => {
                   }}
                 >
                   <Button
-                    onClick={() => {
-                      addMenu(item.idMenu, item.title);
-                    }}
+                    onClick={() => {}}
                     sx={{
                       bgcolor: "#008556",
                       "&:hover": {
@@ -128,7 +76,6 @@ const ContentBy1get1 = (props) => {
                       sx={{
                         color: "#ffff",
                         display: "flex",
-                       
                       }}
                     >
                       {item.price}

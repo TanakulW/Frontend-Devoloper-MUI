@@ -1,9 +1,9 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import React from "react";
 import CardContent from "../component/cardContent";
 
 const contentComp = (props) => {
-  const { darkModeMain ,orderSelect,setOrderSelect} = props;
+  const { darkModeMain } = props;
 
   return (
     <Box
@@ -29,8 +29,7 @@ const contentComp = (props) => {
           borderRadius: "20px",
         }}
       >
-        <CardContent orderSelect={orderSelect}setOrderSelect={setOrderSelect} />
-
+        <CardContent />
       </Box>
     </Box>
   );

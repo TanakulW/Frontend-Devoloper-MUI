@@ -43,7 +43,7 @@ import QR from "../../../assets/image/QRCODE.png";
 import ContentListMenu from "../component/contentListMenu"
 
 const AppBarComp = (props) => {
-  const { setDarkModeMain, orderSelect } = props;
+  const { setDarkModeMain } = props;
   const [openTab, setOpenTab] = useState(false);
   const navigate = useNavigate();
 
@@ -218,7 +218,7 @@ const AppBarComp = (props) => {
               </Box>
             </Modal>
 
-            <Badge badgeContent={4} color="error">
+            <Badge badgeContent={0} color="error">
               <Button
                 sx={{
                   bgcolor: "#F9B044",
