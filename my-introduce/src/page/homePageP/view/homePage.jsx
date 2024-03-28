@@ -7,7 +7,6 @@ import { Box } from "@mui/material";
 const HomePage = () => {
   const [darkModeMain, setDarkModeMain] = useState(false);
   const [cart, setCart] = useState([]);
-console.log(cart);
   return (
     <Box>
       <div className="appbar">

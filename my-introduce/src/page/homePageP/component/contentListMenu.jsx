@@ -26,6 +26,10 @@ const ContentListMenu = (props) => {
     return acc;
   }, []);
 
+const delItem =(id,quantity)=>{
+console.log(id,quantity);
+}
+
   return (
     <Box sx={{ width: 450 }}>
       <Grid container>
@@ -80,7 +84,8 @@ const ContentListMenu = (props) => {
                     borderRadius: "20px",
                     border: "1px solid #DC283B",
                   }}
-                  onClick={submit}
+                  // onClick={() => delItem(item.quantity)}
+                  onClick={() => delItem(item.idMenu,item.quantity)}
                 >
                   <Typography color="#DC283B" fontSize="16px">
                     ลบสินค้า
