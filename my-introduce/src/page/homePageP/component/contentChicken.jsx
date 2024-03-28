@@ -2,7 +2,12 @@ import { Box, Button, Grid, ImageList, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import React from "react";
 
-const ContentChicken = () => {
+const ContentChicken = (props) => {
+  const {setCart}=props
+  const addToCart = (menuItem) => {
+    setCart((prevState) => [...prevState, menuItem]);
+  };
+  
   return (
     <Grid
       container
@@ -62,7 +67,7 @@ const ContentChicken = () => {
                   }}
                 >
                   <Button
-                    onClick={() => {}}
+                   onClick={() => addToCart(item)}
                     sx={{
                       bgcolor: "#008556",
                       "&:hover": {

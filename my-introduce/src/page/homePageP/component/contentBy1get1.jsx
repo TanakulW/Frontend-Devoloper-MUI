@@ -6,7 +6,7 @@ const ContentBy1get1 = (props) => {
   const { setCart} = props;
 
   const addToCart = (menuItem) => {
-    setCart([ menuItem]);
+    setCart((prevState) => [...prevState, menuItem]);
   };
   
   return (

@@ -42,7 +42,7 @@ import QR from "../../../assets/image/QRCODE.png";
 import ContentListMenu from "../component/contentListMenu"
 
 const AppBarComp = (props) => {
-  const { setDarkModeMain } = props;
+  const { setDarkModeMain,cart } = props;
   const [openTab, setOpenTab] = useState(false);
   const navigate = useNavigate();
 
@@ -159,7 +159,7 @@ const AppBarComp = (props) => {
           </Search>
 
           <Stack direction="row" spacing={1}>
-            <Badge badgeContent={0} color="error">
+            <Badge badgeContent={cart.length} color="error">
               <Button
                 sx={{
                   bgcolor: "#F9B044",
@@ -170,6 +170,7 @@ const AppBarComp = (props) => {
                   borderRadius: "20px",
                   boxShadow: "2px 2px 0px 0px #4A1C04",
                 }}
+                // disabled={cart.length === 0}
                 onClick={handleClick}
               >
                 <ShoppingBagOutlinedIcon sx={{ color: "#ffff" }} />
@@ -181,7 +182,7 @@ const AppBarComp = (props) => {
                 onClose={handleCloseList}
                 sx={{ mt: 1 }}
               >
-                <ContentListMenu/>
+                <ContentListMenu cart={cart}/>
                
               </Menu>
             </Badge>

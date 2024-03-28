@@ -100,7 +100,7 @@ const CardContent = (props) => {
 
         <Grid item xs={12}>
           {(selectedId === null || selectedId === "1") && <ContentBy1get1 setCart={setCart} /> }
-          {selectedId === "2" && <ContentChicken />}
+          {selectedId === "2" && <ContentChicken setCart={setCart}/>}
           {selectedId === "3" && <ContentPasta />}
           {selectedId === "4" && <ContentSalad />}
           {selectedId === "5" && <ContentDesserts />}
