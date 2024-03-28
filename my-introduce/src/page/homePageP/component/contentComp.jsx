@@ -3,7 +3,7 @@ import React from "react";
 import CardContent from "../component/cardContent";
 
 const contentComp = (props) => {
-  const { darkModeMain } = props;
+  const { darkModeMain,setCart } = props;
 
   return (
     <Box
@@ -29,7 +29,7 @@ const contentComp = (props) => {
           borderRadius: "20px",
         }}
       >
-        <CardContent />
+        <CardContent setCart={setCart} />
       </Box>
     </Box>
   );

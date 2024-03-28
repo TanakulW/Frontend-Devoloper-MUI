@@ -15,7 +15,8 @@ import ContentSalad from "../component/contentSalad";
 import ContentDesserts from "../component/contentDesserts";
 import ContentAppetizers from "../component/contentAppetizes";
 
-const CardContent = () => {
+const CardContent = (props) => {
+  const {setCart}=props
   const [selectedId, setSelectedId] = useState(null);
 
   const handleButtonClick = (id) => {
@@ -98,7 +99,7 @@ const CardContent = () => {
         />
 
         <Grid item xs={12}>
-          {(selectedId === null || selectedId === "1") && <ContentBy1get1 />}
+          {(selectedId === null || selectedId === "1") && <ContentBy1get1 setCart={setCart} /> }
           {selectedId === "2" && <ContentChicken />}
           {selectedId === "3" && <ContentPasta />}
           {selectedId === "4" && <ContentSalad />}

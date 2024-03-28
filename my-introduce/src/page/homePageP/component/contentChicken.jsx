@@ -78,7 +78,7 @@ const ContentChicken = () => {
                         display: "flex",
                       }}
                     >
-                      {item.price}
+                      {item.price} ฿
                       <AddIcon />
                       เลือก
                     </Typography>
@@ -100,60 +100,60 @@ const dataChicken = [
     idMenu: "1",
     img: "https://cdn.1112.com/1112/public//images/products/chicken/116758.png",
     title: "ไส้กรอกยั่วนัวเบคอน",
-    price: "149 ฿",
+    price: 149,
   },
   {
     idMenu: "2",
     img: "https://cdn.1112.com/1112/public//images/products/chicken/116760.png",
     title: "ไก่กรอบซอสสไปซี่ 6 ชิ้น",
-    price: "149 ฿",
+    price: 149,
   },
   {
     idMenu: "3",
     img: "https://cdn.1112.com/1112/public//images/products/chicken/116756.png",
     title: "ไก่กรอบซอสกระเทียม 6 ชิ้น",
-    price: "149 ฿",
+    price: 149,
   },
   {
     idMenu: "4",
     img: "https://cdn.1112.com/1112/public//images/products/chicken/116536_1.png",
     title: "ปีกไก่ บาร์บีคิว 6 ชิ้น",
-    price: "149 ฿",
+    price: 149,
   },
   {
     idMenu: "5",
     img: "https://cdn.1112.com/1112/public//images/products/chicken/116554_1.png",
     title: "ปีกไก่ทอด สไตล์เกาหลี 6 ชิ้น",
-    price: "149 ฿",
+    price: 149,
   },
   {
     idMenu: "6",
     img: "https://cdn.1112.com/1112/public//images/products/chicken/116759.png",
     title: "ไก่กรอบซอสหวาน 10 ชิ้น",
-    price: "219 ฿",
+    price: 219,
   },
   {
     idMenu: "7",
     img: "https://cdn.1112.com/1112/public//images/products/chicken/116761.png",
     title: "ไก่กรอบซอสสไปซี่ 10 ชิ้น",
-    price: "219 ฿",
+    price: 219,
   },
   {
     idMenu: "8",
     img: "https://cdn.1112.com/1112/public//images/products/chicken/116757.png",
     title: "ไก่กรอบซอสกระเทียม 10 ชิ้น",
-    price: "219 ฿",
+    price: 219,
   },
   {
     idMenu: "9",
     img: "https://cdn.1112.com/1112/public//images/products/chicken/116539_1.png",
     title: "ปีกไก่บาร์บีคิว 10 ชิ้น",
-    price: "219 ฿",
+    price: 219,
   },
   {
     idMenu: "10",
     img: "https://cdn.1112.com/1112/public//images/products/chicken/116561_1.png",
     title: "ปีกไก่ทอด สไตล์เกาหลี 10 ชิ้น",
-    price: "219 ฿",
+    price: 219,
   },
 ];

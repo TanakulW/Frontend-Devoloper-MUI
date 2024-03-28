@@ -79,7 +79,7 @@ const ContentPasta = () => {
                         display: "flex",
                       }}
                     >
-                      {item.price}
+                      {item.price} ฿
                       <AddIcon />
                       เลือก
                     </Typography>
@@ -101,61 +101,61 @@ const dataPasta = [
     idMenu: "1",
     img: "https://cdn.1112.com/1112/public//images/products/pasta/115687.png",
     title: "สปาเก็ตตี้คาโบนาร่า",
-    price: "139 ฿",
+    price: 139,
   },
   {
     idMenu: "2",
     img: "https://cdn.1112.com/1112/public//images/products/pasta/115812.png",
     title: "สปาเก็ตตี้แฮมและเห็ดในครีมซอส",
-    price: "129 ฿",
+    price: 129,
   },
   {
     idMenu: "3",
     img: "https://cdn.1112.com/1112/public//images/products/pasta/115654_2.png",
     title: "สปาเก็ตตี้ขี้เมาไส้กรอก",
-    price: "129 ฿",
+    price: 129,
   },
   {
     idMenu: "4",
     img: "https://cdn.1112.com/1112/public//images/products/pasta/website/itm115536.png",
     title: "สปาเก็ตตี้ใส้กรอกผัดพริกแห้ง",
-    price: "129 ฿",
+    price: 129,
   },
   {
     idMenu: "5",
     img: "https://cdn.1112.com/1112/public//images/products/pasta/115688.png",
     title: "สปาเก็ตตี้หมูสับ",
-    price: "139 ฿",
+    price: 139,
   },
   {
     idMenu: "6",
     img: "https://cdn.1112.com/1112/public//images/products/pasta/website/itm115539.png",
     title: "สปาเก็ตตี้เบคอนผัดพริกแห้ง",
-    price: "139 ฿",
+    price: 139,
   },
   {
     idMenu: "7",
     img: "https://cdn.1112.com/1112/public//images/products/pasta/115580_1.png",
     title: "สปาเก็ตตี้ ขี้เมาทะเล",
-    price: "169 ฿",
+    price: 169,
   },
 
   {
     idMenu: "8",
     img: "https://cdn.1112.com/1112/public//images/products/pasta/115671.png",
     title: "มักกะโรนีแฮมและเห็ดอบชีส",
-    price: "129 ฿",
+    price: 129,
   },
   {
     idMenu: "9",
     img: "https://cdn.1112.com/1112/public//images/products/pasta/115672.png",
     title: "มักกะโรนีไก่บาร์บีคิวอบชีส",
-    price: "129 ฿",
+    price: 129,
   },
   {
     idMenu: "10",
     img: "https://cdn.1112.com/1112/public//images/products/pasta/115673.png",
     title: "มักกะโรนีเบคอนอบชีส",
-    price: "139 ฿",
+    price: 139,
   },
 ];

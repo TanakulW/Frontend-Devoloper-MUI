@@ -79,7 +79,7 @@ const ContentSalad = () => {
                         display: "flex",
                       }}
                     >
-                      {item.price}
+                      {item.price} ฿
                       <AddIcon />
                       เลือก
                     </Typography>
@@ -101,24 +101,24 @@ const dataSalad = [
     idMenu: "1",
     img: "https://cdn.1112.com/1112/public//images/products/114022.png",
     title: "ไส้กรอกรวมย่าง",
-    price: "279 ฿",
+    price: 279,
   },
   {
     idMenu: "2",
     img: "https://cdn.1112.com/1112/public//images/products/steak/114002.png",
     title: "ซี่โครงหมูบาร์บีคิว",
-    price: "399 ฿",
+    price: 399,
   },
   {
     idMenu: "3",
     img: "https://cdn.1112.com/1112/public//images/products/salad/116508_1.png",
     title: "ซีซาร์สลัด",
-    price: "149 ฿",
+    price: 149,
   },
   {
     idMenu: "4",
     img: "https://cdn.1112.com/1112/public//images/products/salad/website/itm116503.png",
     title: "การ์เดนสลัด และน้ำครีมสลัด",
-    price: "129 ฿",
+    price: 129,
   },
 ];

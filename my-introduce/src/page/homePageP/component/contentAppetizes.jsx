@@ -79,7 +79,7 @@ const ContentAppetizes = () => {
                         display: "flex",
                       }}
                     >
-                      {item.price}
+                      {item.price} ฿
                       <AddIcon />
                       เลือก
                     </Typography>
@@ -101,42 +101,42 @@ const dataAppetize = [
     idMenu: "1",
     img: "https://cdn.1112.com/1112/public//images/products/icecream/125278_2.png",
     title: "ไอศกรีม มอคค่า อัลมอนด์ ฟัดจ์",
-    price: "259 ฿",
+    price: 259,
   },
   {
     idMenu: "2",
     img: "https://cdn.1112.com/1112/public//images/products/icecream/125271_2.png",
     title: "ไอศกรีม ช็อคโกแลต",
-    price: "259 ฿",
+    price: 259,
   },
   {
     idMenu: "3",
     img: "https://cdn.1112.com/1112/public//images/products/icecream/125272_2.png",
     title: "ไอศกรีม ช็อคโกแลตชิพ",
-    price: "259 ฿",
+    price: 259,
   },
   {
     idMenu: "4",
     img: "https://cdn.1112.com/1112/public//images/products/icecream/125274_2.png",
     title: "ไอศกรีม รัมเรซิน",
-    price: "259 ฿",
+    price: 259,
   },
   {
     idMenu: "5",
     img: "https://cdn.1112.com/1112/public//images/products/icecream/125275_2.png",
     title: "ไอศกรีม เวรี่ สตอเบอร์รี่",
-    price: "259 ฿",
+    price: 259,
   },
   {
     idMenu: "6",
     img: "https://cdn.1112.com/1112/public//images/products/beverage/117564_3.png",
     title: "โค้ก 1.25 ลิตร",
-    price: "45 ฿",
+    price:45,
   },
   {
     idMenu: "7",
     img: "https://cdn.1112.com/1112/public//images/products/beverage/117565_2.png",
     title: "โค้ก (ไม่มีน้ำตาล) 1.25 ลิตร",
-    price: "45 ฿",
+    price:45,
   },
 ];

@@ -12,7 +12,6 @@ import {
   ListItemIcon,
   ListItemText,
   Menu,
-  MenuItem,
   Modal,
   Stack,
   Toolbar,

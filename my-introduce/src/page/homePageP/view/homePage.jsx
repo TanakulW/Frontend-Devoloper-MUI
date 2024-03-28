@@ -6,6 +6,7 @@ import { Box } from "@mui/material";
 
 const HomePage = () => {
   const [darkModeMain, setDarkModeMain] = useState(false);
+  const [cart, setCart] = useState([]);
 
   return (
     <Box>
@@ -13,7 +14,7 @@ const HomePage = () => {
         <AppBarComp setDarkModeMain={setDarkModeMain} />
       </div>
       <div className="content">
-        <ContentComp darkModeMain={darkModeMain} />
+        <ContentComp darkModeMain={darkModeMain} setCart={setCart} />
       </div>
       <div className="footer">
         <FooterComp darkModeMain={darkModeMain} />

@@ -79,7 +79,7 @@ const ContentDesserts = () => {
                         display: "flex",
                       }}
                     >
-                      {item.price}
+                      {item.price} ฿
                       <AddIcon />
                       เลือก
                     </Typography>
@@ -101,60 +101,60 @@ const dataDessert = [
     idMenu: "1",
     img: "https://cdn.1112.com/1112/public//images/products/appetizer/116601.png",
     title: "เบรดสติ๊ก",
-    price: "79 ฿",
+    price: 79,
   },
   {
     idMenu: "2",
     img: "https://cdn.1112.com/1112/public//images/products/appetizer/116603.png",
     title: "ขนมปังกระเทียมชีส",
-    price: "89 ฿",
+    price: 89,
   },
   {
     idMenu: "3",
     img: "https://cdn.1112.com/1112/public//images/products/appetizer/116525_4.png",
     title: "ขนมปังกระเทียม",
-    price: "79 ฿",
+    price: 79,
   },
   {
     idMenu: "4",
     img: "https://cdn.1112.com/1112/public//images/products/appetizer/116816.png",
     title: "ไวาฟเฟิล ฟรายส์",
-    price: "79 ฿",
+    price: 79,
   },
   {
     idMenu: "5",
     img: "https://cdn.1112.com/1112/public//images/products/chicken/116569.png",
     title: "ชิกเก้น นักเก็ตส์ 6 ชิ้น พร้อมซอสมะเขือเทศ",
-    price: "89 ฿",
+    price: 89,
   },
   {
     idMenu: "6",
     img: "https://cdn.1112.com/1112/public//images/products/chicken/116520_1.png",
     title: "ชิกเก้นสติ๊กส์",
-    price: "89 ฿",
+    price: 89,
   },
   {
     idMenu: "7",
     img: "https://cdn.1112.com/1112/public//images/products/appetizer/116805.png",
     title: "ปลาชุปเกล็ดขนมปังทอด",
-    price: "89 ฿",
+    price: 89,
   },
   {
     idMenu: "8",
     img: "https://cdn.1112.com/1112/public//images/products/appetizer/116624.png",
     title: "ชีสสติ๊กส์",
-    price: "89 ฿",
+    price: 89,
   },
   {
     idMenu: "9",
     img: "https://cdn.1112.com/1112/public//images/products/appetizer/116571.png",
     title: "ปลาหมึกชุปแป้งทอด",
-    price: "99 ฿",
+    price: 99,
   },
   {
     idMenu: "9",
     img: "https://cdn.1112.com/1112/public//images/products/pasta/115505.png",
     title: "ผักโขมอบชีส",
-    price: "179 ฿",
+    price: 179,
   },
 ];

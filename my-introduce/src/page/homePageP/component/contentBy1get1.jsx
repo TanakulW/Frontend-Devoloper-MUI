@@ -2,7 +2,13 @@ import { Box, Button, Grid, ImageList, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import React from "react";
 
-const ContentBy1get1 = () => {
+const ContentBy1get1 = (props) => {
+  const { setCart} = props;
+
+  const addToCart = (menuItem) => {
+    setCart([ menuItem]);
+  };
+  
   return (
     <Grid
       container
@@ -61,7 +67,7 @@ const ContentBy1get1 = () => {
                   }}
                 >
                   <Button
-                    onClick={() => {}}
+                    onClick={() => addToCart(item)}
                     sx={{
                       bgcolor: "#008556",
                       "&:hover": {
@@ -78,7 +84,7 @@ const ContentBy1get1 = () => {
                         display: "flex",
                       }}
                     >
-                      {item.price}
+                      {item.price} ฿
                       <AddIcon />
                       เลือก
                     </Typography>
@@ -100,66 +106,66 @@ const dataPizza = [
     idMenu: "1",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/220265.png",
     title: "ไส้กรอกยั่วนัวเบคอน",
-    price: "479 ฿",
+    price: 479,
   },
   {
     idMenu: "2",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/162216.png",
     title: "ดับเบิ้ลชีสพิซซ่า",
-    price: "279 ฿",
+    price: 279,
   },
   {
     idMenu: "3",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/162217.png",
     title: "ดับเบิ้ลเปปเปอโรนี",
-    price: "279 ฿",
+    price: 279,
   },
   {
     idMenu: "4",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102204.png",
     title: "ฮาวายเอี้ยน",
-    price: "379 ฿",
+    price: 379,
   },
   {
     idMenu: "5",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102208.png",
     title: "ซีฟู้ดค็อกเทล",
-    price: "439 ฿",
+    price: 439,
   },
   {
     idMenu: "6",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102201.png",
     title: "ซุปเปอร์เดอลุกซ์",
-    price: "379 ฿",
+    price: 379,
   },
   {
     idMenu: "7",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102734.png",
     title: "สไปซี่ ซุปเปอร์ซีฟู้ด",
-    price: "439 ฿",
+    price: 439,
   },
   {
     idMenu: "8",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102228.png",
     title: "ซีฟู้ดเดอลุกซ์",
-    price: "439 ฿",
+    price: 439,
   },
   {
     idMenu: "9",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102209.png",
     title: "ค็อกเทลกุ้ง",
-    price: "439 ฿",
+    price: 439,
   },
   {
     idMenu: "10",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102726.png",
     title: "โฟร์ชีสและเบคอน",
-    price: "439 ฿",
+    price: 439,
   },
   {
     idMenu: "11",
     img: "https://cdn.1112.com/1112/public//images/products/pizza/Topping/102725.png",
     title: "ผักโขมอบและมะเขือเทศ",
-    price: "379 ฿",
+    price: 379,
   },
 ];
