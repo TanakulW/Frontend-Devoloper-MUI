@@ -16,6 +16,16 @@ const ContentListMenu = (props) => {
     return totalPrice.toLocaleString();
   };
 
+  const mergedCart = cart.reduce((acc, item) => {
+    const existingItem = acc.find((i) => i.idMenu === item.idMenu);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      acc.push({ ...item, quantity: 1 });
+    }
+    return acc;
+  }, []);
+
   return (
     <Box sx={{ width: 450 }}>
       <Grid container>
@@ -36,30 +46,47 @@ const ContentListMenu = (props) => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
           }}
         >
-          {cart.map((item, index) => (
-            <div
-              key={index}
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                marginRight: "10px",
-              }}
-            >
+          {mergedCart.map((item, index) => (
+            <div key={index}>
               <div style={{ display: "flex", alignItems: "center" }}>
-          
                 <img src={item.img} alt={item.title} style={{ width: "50%" }} />
-                <Typography>x</Typography>
-                &nbsp;
-                <Typography>{item.title}</Typography>
-                &nbsp;
-                <Typography display="flex" justifyContent="right">
-                  ฿ {item.price}
-                </Typography>
+                <div style={{ marginLeft: 1 }}>
+                  <Typography>
+                    x{item.quantity} {item.title}{" "}
+                    {`฿ ${(item.price * item.quantity).toLocaleString()}`}
+                  </Typography>
+                </div>
               </div>
+
+              <Grid
+                item
+                xs={12}
+                sx={{ p: 2 }}
+                display="flex"
+                justifyContent="center"
+              >
+                <Button
+                  variant="outlined"
+                  sx={{
+                    "&:hover": {
+                      backgroundColor: "#DC283B",
+                      borderColor: "#DC283B",
+                      "& .MuiTypography-root": {
+                        color: "#ffffff",
+                      },
+                    },
+                    borderRadius: "20px",
+                    border: "1px solid #DC283B",
+                  }}
+                  onClick={submit}
+                >
+                  <Typography color="#DC283B" fontSize="16px">
+                    ลบสินค้า
+                  </Typography>
+                </Button>
+              </Grid>
             </div>
           ))}
         </Grid>
@@ -88,11 +115,13 @@ const ContentListMenu = (props) => {
                 borderColor: "#2C6837",
               },
               borderRadius: "20px",
+              width: "50%",
+              boxShadow: "2px 2px 0px 0px black",
             }}
             onClick={submit}
           >
             <Typography color="#ffff   " fontSize={"16px"}>
-              ยังไม่รวมส่วนลด
+              สั่งสินค้า
             </Typography>
           </Button>
         </Grid>

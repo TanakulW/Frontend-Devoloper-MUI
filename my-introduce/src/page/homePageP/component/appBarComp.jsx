@@ -170,7 +170,7 @@ const AppBarComp = (props) => {
                   borderRadius: "20px",
                   boxShadow: "2px 2px 0px 0px #4A1C04",
                 }}
-                // disabled={cart.length === 0}
+                disabled={cart.length === 0}
                 onClick={handleClick}
               >
                 <ShoppingBagOutlinedIcon sx={{ color: "#ffff" }} />
